@@ -1,0 +1,49 @@
+@import "../partial/subIcon.css";
+
+#wrap {
+  display: flex;
+  justify-content: center;
+}
+
+#sidebar {
+  width: 226px;
+}
+
+#skills_list {
+  margin: 5px 0;
+  width: 226px;
+  min-height: 100px;
+  text-align: center;
+}
+#skills_list > li {
+  display: flex;
+  flex-direction: column;
+}
+#skills_list > li > a {
+  padding: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+#skills_list > li:hover > a {
+  background-color: #8f8681;
+  color: white;
+}
+
+#sidebar > ul > li > a::before,
+#content_skills > h1::before {
+  content: "- ";
+}
+
+#content_skills {
+  width: 100%;
+  border-left: 1px solid #999;
+  padding: 30px;
+  font-weight: bold;
+}
+
+/*Project window*/
+#content_skills > h1 {
+  font-size: large;
+}

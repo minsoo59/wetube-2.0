@@ -1,0 +1,30 @@
+@import "../css/reset.css";
+@import "../css/partial/side.css";
+
+/* title of Project  */
+#content_skills > ol {
+  padding: 10px;
+  list-style: decimal;
+  margin: 15px;
+}
+/* detail that title of Project */
+#content_skills > ol > li {
+  padding: 5px 0;
+  margin: 10px 0;
+  font-size: 13px;
+}
+#content_skills > ol > li > ol {
+  list-style: inside;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+#content_skills > ol > li > ol > li {
+  padding: 5px 0;
+  font-size: 13px;
+}
+
+img {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px 0;
+}

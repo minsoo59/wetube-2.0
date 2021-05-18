@@ -1,0 +1,18 @@
+@import "../css/reset.css";
+
+body{
+    position: relative;
+}
+div> img{
+    position: absolute;
+    background-color: aqua;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+#epic7{
+    width: 50%;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%)
+}

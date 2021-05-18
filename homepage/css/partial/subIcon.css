@@ -1,0 +1,28 @@
+/* index of introduce, certificate icon */
+.menu {
+  float: left;
+  padding: 15px;
+  width: 120px;
+  background-color: #8f8681;
+  color: white;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 10px auto;
+}
+
+/* coding, projects menu icon */
+#sidebar > #skills {
+  padding: 15px;
+  width: 65px;
+  background-color: #8f8681;
+  color: white;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 17px;
+  font-weight: bold;
+  margin: 30px auto;
+}

@@ -1,0 +1,22 @@
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 208px;
+  background-color: #8f8681;
+  border: 1px solid #8f8681;
+  display: none;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown > li > a {
+  display: block;
+
+  text-decoration: none;
+  color: white;
+  padding: 20px 30px 20px 20px;
+  font-size: 15px;
+}
+
+.on {
+  display: block;
+}

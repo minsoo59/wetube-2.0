@@ -1,0 +1,14 @@
+@import "../css/reset.css";
+
+#middleObj {
+  display: flex;
+  justify-content: center;
+
+  width: 1130px;
+  padding: 20px 30px;
+  margin: 0 auto;
+}
+
+a > #picture {
+  cursor: pointer;
+}

@@ -1,0 +1,31 @@
+@import "../css/reset.css";
+@import "../css/partial/memu_downdrop.css";
+@import "../css/partial/subIcon.css";
+
+#middleObj {
+  display: flex;
+  flex-direction: column;
+  width: 1130px;
+  padding: 20px 30px;
+  margin: 0 auto;
+}
+
+#menuList {
+  background-color: #8f8681;
+  margin: 5px 0;
+  position: relative;
+}
+
+#menuList > li > a {
+  float: left;
+  padding: 20px;
+  font-size: 17px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+#menuList > li > a:hover {
+  background-color: #e1dcd9;
+  color: #8f8681;
+}
