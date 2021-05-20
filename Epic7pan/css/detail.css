@@ -1,0 +1,129 @@
+@import "../css/index.css";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.detail__contents {
+  position: relative;
+  text-align: center;
+
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  width: 50%;
+  height: 60%;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+#contents_video {
+  position: relative;
+  border-radius: 10px 10px 0 0;
+
+  overflow: hidden;
+}
+
+#contents_video > img {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  display: block;
+}
+#prev {
+  left: 2%;
+}
+#next {
+  right: -2%;
+}
+#videoList > ul {
+  width: 1000%;
+  float: left;
+}
+#videoList > ul > .video {
+  float: left;
+}
+#videoList > ul > .video > a {
+  float: left;
+}
+#videoList > ul > .video > a > img {
+  float: left;
+  width: 400px;
+  height: 250px;
+}
+
+.contents_detail {
+  background-color: #fff;
+  width: 100%;
+  padding: 80px 0;
+  border-radius: 0 0 10px 10px;
+  float: left;
+
+  position: relative;
+}
+.contents_detail > ul {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 70px;
+}
+.contents_detail > ul > ul {
+  float: left;
+  width: 100%;
+  text-align: center;
+}
+.contents_detail > ul > ul > li {
+  float: left;
+  padding: 8px;
+  padding-right: 1.1vw;
+  color: black;
+  font-size: 17px;
+}
+.contents_detail > ul > ul:nth-child(5) > li:not(:first-child) {
+  padding-right: 8px;
+}
+.contents_detail > ul > ul:last-child > li:nth-child(1) {
+  padding: 8px;
+}
+.contents_detail > ul > ul > li > a {
+  text-decoration: none;
+  color: blue;
+  font-size: 17px;
+}
+.contents_detail > #app_pic {
+  padding: 80px;
+}
+#app_pic {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+button {
+  all: unset;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+.hidden {
+  display: none;
+}

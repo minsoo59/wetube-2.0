@@ -1,0 +1,25 @@
+#listWhite {
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#listWhite > ul {
+  float: left;
+  border-radius: 16px;
+  padding: 10px;
+
+  background-color: white;
+  opacity: 50%;
+  display: block;
+}
+
+#listWhite > ul > li {
+  float: left;
+  padding: 10px 20px;
+  color: black;
+  font-weight: bold;
+  font-size: 17px;
+  cursor: pointer;
+}
