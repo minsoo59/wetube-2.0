@@ -1,21 +1,16 @@
 @import "../css/reset.css";
 @import "../css/menu.css";
+@import "../css/modal.css";
 @import "../css/detail.css";
 @import "../css/gallery.css";
-@import "../css/modal.css";
 
 body {
   position: relative;
 
-  background-image: url(../images/bg.jpg);
+  background: url(../images/bg.jpg) no-repeat;
   background-size: 100%;
-  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
   max-width: 1920px;
-  max-height: 1080px;
-}
-#epic7 {
-  position: absolute;
-  width: 40%;
-  left: 50%;
-  transform: translate(-50%, 50%);
+  height: 1080px;
 }

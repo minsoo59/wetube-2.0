@@ -1,55 +1,52 @@
 #contents_video {
   position: relative;
   border-radius: 10px 10px 0 0;
-
   overflow: hidden;
 }
-
+/* #prev, #next */
 #contents_video > img {
   position: absolute;
+  cursor: pointer;
   top: 50%;
   transform: translate(-50%, -50%);
-  cursor: pointer;
-  display: block;
 }
 #prev {
-  left: 4%;
+  left: 2%;
 }
 #next {
-  right: -2%;
+  right: -3%;
+}
+#videoList {
+  display: inline;
+  width: 100%;
+  height: 100%;
 }
 
 #videoList > ul {
   width: 1000%;
   float: left;
 }
-#videoList > ul > .video {
-  float: left;
-}
-#videoList > ul > .video > a {
-  float: left;
-}
 #videoList > ul > .video > a > img {
   float: left;
   width: 400px;
-  height: 250px;
 }
 
 .contents_detail {
+  display: inline-block;
+  padding: 60px;
   background-color: #fff;
-  width: 100%;
-  padding: 60px 0;
   border-radius: 0 0 10px 10px;
-  float: left;
 
   position: relative;
 }
 .contents_detail > ul {
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 70px;
+  display: inline;
+}
+.contents_detail > ul::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 .contents_detail > ul > ul {
   float: left;
@@ -85,24 +82,15 @@
 
 .videoBig {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  top: 50%;
+  width: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   z-index: 1;
 }
-.video_mid {
-  z-index: 1;
-  width: 65%;
-
-  display: flex;
-  align-items: center;
-}
-
-.video_mid > a > img {
+img.video_mid {
+  display: block;
   width: 100%;
   border-radius: 15px;
   cursor: pointer;

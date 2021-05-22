@@ -1,23 +1,25 @@
 #listWhite {
-  position: absolute;
+  position: fixed;
+  top: 100px;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%, -50%);
+  margin-left: 10px;
 }
 
 #listWhite > ul {
-  float: left;
   border-radius: 16px;
-  padding: 10px;
   background-color: white;
   opacity: 70%;
-  display: block;
+  display: inline-block;
+  align-items: center;
+  padding: 15px 0;
 }
 
 #listWhite > ul > li {
-  float: left;
-  padding: 10px 20px;
+  display: inline;
   color: black;
   font-weight: bold;
   font-size: 17px;
+  padding: 15px;
   cursor: pointer;
 }

@@ -8,54 +8,56 @@ const listWhite = document.getElementById("listWhite"),
   videoList = document.getElementById("videoList"),
   ul = videoList.querySelector("ul"),
   videoBig = document.getElementById("videoBig"),
-  changeImg = videoBig.querySelector(".video_mid > a > img"),
-  overlay2 = videoBig.querySelector(".overlay2");
+  changeImg = videoBig.querySelector("img.video_mid");
 
 const gallery = listWhite.querySelector("li:nth-child(2)"),
   modalGallery = document.getElementById("modalGallery"),
-  btnGallery = modalGallery.querySelector("button:nth-child(1)"),
+  btnGallery = modalGallery.querySelector("button:nth-child(2)"),
   overlayGallery = modalGallery.querySelector(".overlay");
 
-const strategy = listWhite.querySelector("li:nth-child(3)");
+const strategy = listWhite.querySelector("li:nth-child(3)"),
+  modalStrategy = document.getElementById("modalStrategy"),
+  overlayStrategy = modalStrategy.querySelector(".overlay");
 
+//strategy
+function strategyOut() {
+  modalStrategy.classList.add("hiddenStrategy");
+}
+function strategyClick() {
+  modalStrategy.classList.remove("hiddenStrategy");
+}
+//gallery
+function galleryOut() {
+  modalGallery.classList.add("hiddenGallery");
+}
+function galleryClick() {
+  modalGallery.classList.remove("hiddenGallery");
+}
+//detail
 function videoOut(event) {
   event.preventDefault();
-  videoBig.classList.add("hidden");
-  overlay2.classList.add("hidden");
+  videoBig.classList.add("hiddenDetail");
 }
-
 function ulVideoHandler(event) {
-  videoBig.classList.remove("hidden");
-  overlay2.classList.remove("hidden");
+  videoBig.classList.remove("hiddenDetail");
   changeImg.src = event.target.src;
 }
-
 function nextHandler() {
-  // ul에 ul첫번째 자식요소를 이동시킴
-  // = ul.firstElementChild.appendTo("ul")
+  // = ul.firstElementChild.appendTo("ul") ul에 ul첫번째 자식요소를 이동시킴
   ul.append(ul.firstElementChild);
 }
 function prevHandler() {
   ul.prepend(ul.lastElementChild);
 }
-
-function galleryOut() {
-  modalGallery.classList.add("hidden");
-}
-
 function detailout() {
-  modalDetail.classList.add("hidden");
+  modalDetail.classList.add("hiddenDetail");
 }
-
 function detailClick() {
-  modalDetail.classList.remove("hidden");
-}
-
-function galleryClick() {
-  modalGallery.classList.remove("hidden");
+  modalDetail.classList.remove("hiddenDetail");
 }
 
 function init() {
+  //detail
   detail.addEventListener("click", detailClick);
   btnDetail.addEventListener("click", detailout);
   overlayDetail.addEventListener("click", detailout);
@@ -63,11 +65,13 @@ function init() {
   next.addEventListener("click", nextHandler);
   ul.addEventListener("click", ulVideoHandler);
   videoBig.addEventListener("click", videoOut);
-  overlay2.addEventListener("click", videoOut);
-
+  //gallery
   gallery.addEventListener("click", galleryClick);
   btnGallery.addEventListener("click", galleryOut);
   overlayGallery.addEventListener("click", galleryOut);
+  //strategy
+  strategy.addEventListener("click", strategyClick);
+  overlayStrategy.addEventListener("click", strategyOut);
 }
 
 init();

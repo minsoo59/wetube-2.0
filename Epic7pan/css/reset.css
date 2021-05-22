@@ -133,5 +133,6 @@ body {
   font-family: "NanumBarunGothic", sans-serif;
   color: #444;
   letter-spacing: 0.05em;
+  top: 0;
+  left: 0;
 }
-
