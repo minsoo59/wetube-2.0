@@ -1,7 +1,8 @@
-.contents {
+.gallery {
   width: unset;
 }
 
+/* Pictures */
 .picList {
   display: block;
   width: 100%;
@@ -16,8 +17,7 @@
   border-radius: 5px;
   width: 1080px;
 }
-
-/* slide list */
+/* what it's expressed the order*/
 #silde {
   position: absolute;
   text-align: center;
@@ -33,7 +33,7 @@
   display: block;
   border-radius: 50%;
   border: 5px solid white;
-  padding: 5px;
+  padding: 2.5px;
   margin: auto 5px;
   float: left;
   cursor: pointer;
@@ -42,6 +42,7 @@
   margin: 7.5px 0;
   width: 15px;
   height: 15px;
+  background-color: white;
 }
 #silde > ul > li.picListToggle {
   width: 30px;
@@ -50,7 +51,8 @@
 #silde > ul > li.picListToggle > a {
   line-height: 30px;
   text-decoration: none;
-  opacity: 0;
+  color: white;
+  /* opacity: 0; */
 }
 #silde > ul > li:not(:last-child) > a {
   line-height: 15px;

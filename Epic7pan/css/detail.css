@@ -1,3 +1,7 @@
+.detail {
+  width: 50%;
+}
+/* frist */
 #contents_video {
   position: relative;
   border-radius: 10px 10px 0 0;
@@ -21,7 +25,6 @@
   width: 100%;
   height: 100%;
 }
-
 #videoList > ul {
   width: 1000%;
   float: left;
@@ -30,7 +33,7 @@
   float: left;
   width: 400px;
 }
-
+/* second */
 .contents_detail {
   display: inline-block;
   padding: 60px;
@@ -79,7 +82,7 @@
   top: 0;
   right: 0;
 }
-
+/* when images were clicked */
 .videoBig {
   position: fixed;
   top: 50%;

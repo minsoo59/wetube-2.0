@@ -1,5 +1,6 @@
-const listWhite = document.getElementById("listWhite"),
-  detail = listWhite.querySelector("li:nth-child(1)"),
+const listWhite = document.getElementById("listWhite");
+
+const detail = listWhite.querySelector("li:nth-child(1)"),
   modalDetail = document.getElementById("modalDetail"),
   btnDetail = modalDetail.querySelector("button"),
   overlayDetail = modalDetail.querySelector(".overlay"),
@@ -12,7 +13,7 @@ const listWhite = document.getElementById("listWhite"),
 
 const gallery = listWhite.querySelector("li:nth-child(2)"),
   modalGallery = document.getElementById("modalGallery"),
-  btnGallery = modalGallery.querySelector("button:nth-child(2)"),
+  btnGallery = modalGallery.querySelector("button"),
   overlayGallery = modalGallery.querySelector(".overlay");
 
 const strategy = listWhite.querySelector("li:nth-child(3)"),

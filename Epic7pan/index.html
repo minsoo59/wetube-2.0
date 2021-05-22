@@ -19,7 +19,7 @@
     <!-- detail -->
     <div class="modal hiddenDetail" id="modalDetail">
       <div class="overlay"></div>
-      <div class="contents">
+      <div class="contents detail">
         <div id="contents_video">
           <button id="cancelBtn">❌</button>
           <img src="images/prev.png" alt="prev" id="prev" />
@@ -141,12 +141,11 @@
       </div>
       <!--#contents-->
     </div>
-
     <!-- gallery -->
     <div class="modal hiddenGallery" id="modalGallery">
         <div class="overlay"></div>
-        <button id="cancelBtn">❌</button>
-        <div class="contents">
+        <div class="contents gallery">
+          <button id="cancelBtn">❌</button>
           <ul class="picList">
             <li>
                 <img src="images/row/JPEG/0.jpg" alt="0" />
@@ -193,7 +192,7 @@
                   <a href="">5</a>
                 </li>
                 <li class="picListToggle">
-                  <a href="">Tog</a>
+                  <a href="">▶</a>
                 </li>
               </ul>
             </div>
@@ -205,9 +204,9 @@
     <!-- strategy -->
     <div class="modal hiddenStrategy" id="modalStrategy">
       <div class="overlay"></div>
-      <div id="uploadBoard">
-        <ul id="upload_list">
-          <li>전체보기</li>
+      <div class="contents strategy">
+        <ul class="upload_list">
+          <li class="selected">전체보기</li>
           <li>영웅</li>
           <li>심연</li>
           <li>토벌</li>
@@ -216,36 +215,84 @@
           <li>기타</li>
           <li>신규/복귀팁</li>
           <li>오토마톤</li>
-          <img src="" alt="" />
+          <li>🔻</li>
         </ul>
-        <div id="upload_detail">
-          <ul id="upload_item" class="item">
+        <div class="upload_detail">
+          <ul class="item">
+            <li>title</li>
+            <li>user</li>
+            <li>write what time</li>
+          </ul>
+          <ul class="item">
+            <li>title</li>
+            <li>user</li>
+            <li>write what time</li>
+          </ul>
+          <ul class="item">
+            <li>title</li>
+            <li>user</li>
+            <li>write what time</li>
+          </ul>
+          <ul class="item">
+            <li>title</li>
+            <li>user</li>
+            <li>write what time</li>
+          </ul>
+          <ul class="item">
+            <li>title</li>
+            <li>user</li>
+            <li>write what time</li>
+          </ul>
+          <ul class="item">
+            <li>title</li>
+            <li>user</li>
+            <li>write what time</li>
+          </ul>
+          <ul class="item">
+            <li>title</li>
+            <li>user</li>
+            <li>write what time</li>
+          </ul>
+          <ul class="item">
+            <li>title</li>
+            <li>user</li>
+            <li>write what time</li>
+          </ul>
+          <ul class="item">
             <li>title</li>
             <li>user</li>
             <li>write what time</li>
           </ul>
         </div>
+        <div id="write">글쓰기</div>
+        <div id="goto">
+           <ul>
+             <li>⏪</li>
+             <li>◀</li>
+           </ul>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+          </ul>
+          <ul>
+            <li>▶</li>
+            <li>⏩</li>
+          </ul>
+         <ul>
+        </div>
+        <form id="search" method="get">
+          <input type="search">
+          <input type="submit" value="검색">
+        </form>
       </div>
-      <div id="write"><img src="" alt="" />글쓰기</div>
-      <div id="goto">
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <ul>
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-          <li>4</li>
-          <li>5</li>
-          <li>6</li>
-          <li>7</li>
-          <li>8</li>
-          <li>9</li>
-          <li>10</li>
-        </ul>
-        <img src="" alt="" />
-        <img src="" alt="" />
-      </div>
-      <div id="search"></div>
     </div>
 
     <script src="js/index.js"></script>

@@ -1,0 +1,118 @@
+.strategy {
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  padding: 50px;
+  text-align: center;
+}
+.upload_list {
+  margin: auto 0;
+  height: 30px;
+  line-height: 30px;
+  border: 0.1px solid #bfbfbf;
+  background-color: #bfbfbf;
+  text-align: center;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.upload_list > li {
+  display: block;
+  border: none;
+  padding: 0 15px;
+  cursor: pointer;
+}
+.upload_list > li:first-child {
+  padding-left: 15px;
+}
+.upload_list > li:not(:last-child) {
+  float: left;
+  font-size: 15px;
+}
+.upload_list > li:last-child {
+  float: right;
+  padding-right: 15px;
+  font-weight: bold;
+}
+.upload_list::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.upload_list > li.selected {
+  color: #ff5000;
+  background-color: white;
+  border-bottom: 2px solid white;
+  box-sizing: border-box;
+}
+
+.upload_detail {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+ul.item {
+  display: block;
+}
+ul.item > li {
+  float: left;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 5px;
+  border-bottom: 0.1px solid #bfbfbf;
+}
+ul.item > li:first-child {
+  text-align: justify;
+  width: 60%;
+}
+ul.item > li:nth-child(2) {
+  text-align: justify;
+  width: 20%;
+}
+ul.item > li:nth-child(3) {
+  text-align: justify;
+  width: 20%;
+}
+
+#write {
+  display: inline;
+  width: 50px;
+  height: auto;
+  float: right;
+  text-align: center;
+  background-color: #ff5000;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+#write::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#goto {
+  display: block;
+  float: left;
+  width: 100%;
+  margin-top: 10px;
+}
+#goto > ul {
+  display: inline-block;
+}
+#goto > ul > li {
+  display: inline;
+  padding: 5px;
+  float: left;
+  font-weight: bold;
+}
+
+#search {
+  display: block;
+  float: left;
+  width: 100%;
+  margin: 10px;
+}
