@@ -5,15 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
-    <link rel="stylesheet" href="css/detail.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
   </head>
   <body>
-    <div id="bg">
-      <img src="images/bg.jpg" alt="bg" />
-      <div>
         <img src="images/PngItem_2498312.png" alt="epic7" id="epic7" />
-      </div>
-    </div>
     <div id="listWhite">
       <ul>
         <li>Detail</li>
@@ -22,45 +18,69 @@
       </ul>
     </div>
     <!-- detail -->
-    <div class="modal hidden" id="modal">
+    <div class="modal hidden" id="modalDetail">
       <div class="overlay"></div>
-      <div class="detail__contents">
+      <div class="contents">
         <div id="contents_video">
-          <button>❌</button>
+          <button id="cancelBtn">❌</button>
           <img src="images/prev.png" alt="prev" id="prev" />
           <img src="images/next.png" alt="next" id="next" />
           <div id="videoList">
             <ul>
+              <li id="video0" class="video">
+                <a href="#">
+                  <img src="images/row/JPEG/0.jpg" alt="0" />
+                </a>
+              </li>
               <li id="video1" class="video">
-                <a href="#"
-                  ><img
-                    src="images/가로 row/b85d63d072f84fdd9bda6977f44eff07_1550995432.jpg"
-                    alt="1"
-                /></a>
+                <a href="#">
+                  <img src="images/row/JPEG/1.jpg" alt="1" />
+                </a>
               </li>
               <li id="video2" class="video">
-                <a href="#"
-                  ><img
-                    src="images/가로 row/2cd9c38b82d04139919e465db718f51d_1616114206.png"
-                    alt="2"
-                /></a>
+                <a href="#">
+                  <img src="images/row/JPEG/2.jpg" alt="2" />
+                </a>
               </li>
               <li id="video3" class="video">
-                <a href="#"
-                  ><img src="images/드르렁_1547713019.jpg" alt="3"
-                /></a>
+                <a href="#">
+                  <img src="images/row/JPEG/3.jpg" alt="3" />
+                </a>
               </li>
               <li id="video4" class="video">
-                <a href="#"
-                  ><img src="images/가로 row/Iseria.full.2542138.jpg" alt="4"
-                /></a>
+                <a href="#">
+                  <img src="images/row/JPEG/4.jpg" alt="4" />
+                </a>
               </li>
-              <li id="video4" class="video">
+              <li id="video5" class="video">
                 <a href="#"
-                  ><img src="images/가로 row/Bellona.full.2498021.jpg" alt="5"
-                /></a>
+                  ><img src="images/row/JPEG/5.jpg" alt="5" />
+                </a>
+              </li>
+              <li id="video6" class="video">
+                <a href="#">
+                  <img  src="images/row/JPEG/6.jpg" alt="6" />
+                </a>
+              </li>
+              <li id="video7" class="video">
+                <a href="#">
+                  <img src="images/row/JPEG/7.jpg" alt="7" />
+                </a>
+              </li>
+              <li id="video8" class="video">
+                <a href="#">
+                  <img src="images/row/JPEG/8.jpg" alt="8" />
+                </a>
               </li>
             </ul>
+          </div>
+        </div>
+        <div id="videoBig" class="videoBig hidden">
+          <div class="overlay2 hidden"></div>
+          <div class="video_mid">
+            <a href="#">
+              <img src="images/row/JPEG/8.jpg" alt="selectedPic" />
+            </a>
           </div>
         </div>
         <!--#contents_video-->
@@ -123,6 +143,94 @@
       </div>
       <!--#contents-->
     </div>
+
+    <!-- gallery -->
+    <div class="modal hidden" id="modalGallery">
+      <div class="overlay"></div>
+      <div id="gallery" class="contents_pic">
+        <button id="cancelBtn">❌</button>
+        <div class="picList">
+              <img src="images/row/JPEG/1.jpg" alt="1" />
+              <img src="images/row/JPEG/2.jpg" alt="2" />
+              <img src="images/row/JPEG/3.jpg" alt="3" />
+              <img src="images/row/JPEG/4.jpg" alt="4" />
+              <img src="images/row/JPEG/5.jpg" alt="5" />
+              <img src="images/row/JPEG/6.jpg" alt="6" />
+              <img src="images/row/JPEG/7.jpg" alt="7" />
+              <img src="images/row/JPEG/8.jpg" alt="8" />
+              <img src="images/row/JPEG/9.jpg" alt="9" />
+        </div>
+        <div id="silde">
+          <ul>
+            <div class="overlaySmall"></div>
+            <li>
+              <a href="">1</a>
+            </li>
+            <li>
+              <a href="">2</a>
+            </li>
+            <li>
+              <a href="">3</a>
+            </li>
+            <li>
+              <a href="">4</a>
+            </li>
+            <li>
+              <a href="">5</a>
+            </li>
+            <li class="picListToggle">
+              <a href="">Tog</a>
+            </li>
+          </ul>
+        </div>
+        <!--#silde-->
+      </div>
+    </div>
+    <!--#gallery-->
+
+    <!-- strategy -->
+    <!-- <div id="uploadBoard">
+      <ul id="upload_list">
+        <li>전체보기</li>
+        <li>영웅</li>
+        <li>심연</li>
+        <li>토벌</li>
+        <li>미궁</li>
+        <li>아레나</li>
+        <li>기타</li>
+        <li>신규/복귀팁</li>
+        <li>오토마톤</li>
+        <img src="" alt="" />
+      </ul>
+      <div id="upload_detail">
+        <ul id="upload_item" class="item">
+          <li>title</li>
+          <li>user</li>
+          <li>write what time</li>
+        </ul>
+      </div>
+    </div>
+    <div id="write"><img src="" alt="" />글쓰기</div>
+    <div id="goto">
+      <img src="" alt="" />
+      <img src="" alt="" />
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+      </ul>
+      <img src="" alt="" />
+      <img src="" alt="" />
+    </div>
+    <div id="search"></div> -->
+
     <script src="js/index.js"></script>
   </body>
 </html>

@@ -1,13 +1,14 @@
 @import "../css/reset.css";
 @import "../css/menu.css";
+@import "../css/detail.css";
+@import "../css/gallery.css";
+@import "../css/modal.css";
 
-#bg {
+body {
   position: relative;
-  max-width: 1920px;
-  max-height: 1080px;
-}
-#bg > img {
-  width: 100%;
+
+  background-image: url(../images/bg.jpg);
+  background-size: 100%;
 }
 #epic7 {
   position: absolute;
