@@ -1,8 +1,7 @@
 #listWhite {
   position: absolute;
-  top: 5%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 50%);
 }
 
 #listWhite > ul {
@@ -10,7 +9,7 @@
   border-radius: 16px;
   padding: 10px;
   background-color: white;
-  opacity: 50%;
+  opacity: 70%;
   display: block;
 }
 
