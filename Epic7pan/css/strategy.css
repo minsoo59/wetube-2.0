@@ -88,11 +88,7 @@ ul.item > li:nth-child(3) {
   padding: 10px 20px;
   margin-top: 20px;
   border-radius: 5px;
-}
-#write::after {
-  content: "";
-  display: block;
-  clear: both;
+  cursor: pointer;
 }
 #goto {
   display: block;
@@ -108,6 +104,7 @@ ul.item > li:nth-child(3) {
   padding: 5px;
   float: left;
   font-weight: bold;
+  cursor: pointer;
 }
 
 #search {

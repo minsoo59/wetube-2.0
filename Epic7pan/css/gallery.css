@@ -1,16 +1,13 @@
 .gallery {
   width: unset;
+  overflow: hidden;
 }
 
 /* Pictures */
 .picList {
-  display: block;
-  width: 100%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  overflow: hidden;
-}
-.picList > li {
+  position: relative;
   width: 10000%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .picList > li > img {
   float: left;
@@ -38,11 +35,11 @@
   float: left;
   cursor: pointer;
 }
+
 #silde > ul > li:not(:last-child) {
   margin: 7.5px 0;
   width: 15px;
   height: 15px;
-  background-color: white;
 }
 #silde > ul > li.picListToggle {
   width: 30px;

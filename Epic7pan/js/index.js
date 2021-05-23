@@ -14,7 +14,14 @@ const detail = listWhite.querySelector("li:nth-child(1)"),
 const gallery = listWhite.querySelector("li:nth-child(2)"),
   modalGallery = document.getElementById("modalGallery"),
   btnGallery = modalGallery.querySelector("button"),
-  overlayGallery = modalGallery.querySelector(".overlay");
+  overlayGallery = modalGallery.querySelector(".overlay"),
+  picList = document.getElementById("picList"),
+  picListLi = picList.querySelectorAll("li"),
+  sildeList = document.getElementById("silde"),
+  silde = sildeList.querySelector("ul").children;
+let picListToggle = sildeList.querySelector(".picListToggle");
+let isToggle = true;
+let timer = 0;
 
 const strategy = listWhite.querySelector("li:nth-child(3)"),
   modalStrategy = document.getElementById("modalStrategy"),
@@ -28,6 +35,22 @@ function strategyClick() {
   modalStrategy.classList.remove("hiddenStrategy");
 }
 //gallery
+
+function slideHandler(event) {
+  event.preventDefault();
+}
+
+console.log(silde);
+function picListHandler() {
+  picList.style.transitionDuration = "400ms";
+  picList.style.left = "-100%";
+  for (n = 0; n <= silde.length; n++) {}
+  setTimeout(function () {
+    picList.removeAttribute("style");
+    picList.appendChild(picList.firstElementChild);
+  }, 400);
+}
+
 function galleryOut() {
   modalGallery.classList.add("hiddenGallery");
 }
@@ -56,7 +79,6 @@ function detailout() {
 function detailClick() {
   modalDetail.classList.remove("hiddenDetail");
 }
-
 function init() {
   //detail
   detail.addEventListener("click", detailClick);
@@ -70,6 +92,20 @@ function init() {
   gallery.addEventListener("click", galleryClick);
   btnGallery.addEventListener("click", galleryOut);
   overlayGallery.addEventListener("click", galleryOut);
+  let timer = setInterval(picListHandler, 2000);
+  picListToggle.addEventListener("click", function () {
+    if (isToggle === true) {
+      clearTimeout(timer);
+      isToggle = false;
+      picListToggle.children[0].innerHTML = "▶";
+    } else {
+      timer = setInterval(picListHandler, 2000);
+      isToggle = true;
+      picListToggle.children[0].innerHTML = "||";
+    }
+  });
+  sildeList.addEventListener("click", slideHandler);
+
   //strategy
   strategy.addEventListener("click", strategyClick);
   overlayStrategy.addEventListener("click", strategyOut);
