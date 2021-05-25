@@ -18,8 +18,8 @@ const gallery = listWhite.querySelector("li:nth-child(2)"),
   slide = document.getElementById("slide"),
   bullets = document.getElementById("bullets"),
   bulletsLi = bullets.querySelectorAll("li"),
- slideToggle = document.getElementById("slideToggle");
- let  isToggle = true,
+  slideToggle = document.getElementById("slideToggle");
+let isToggle = true,
   timer = 0,
   phtoLength = slide.children.length,
   photoindex = 0;
@@ -36,33 +36,14 @@ function strategyClick() {
 }
 
 //gallery
-function selectedBulletHandler(event) {
-  event.preventDefault();
-  let index = event.target.innerHTML;
-  JSON.parse(index);
-  let diff = index - photoindex; // 차이값
-  if (diff == 0) return;
-  // if (diff < 0) diff += phtoLength;
-
-  bulletsLi[index].classList.add("on");
-  bulletsLi[photoindex].classList.remove("on");
-  photoindex = index;
-
-  slide.animate({ left: diff * -100 + "%" }, 400, function () {
-    slide.removeAttribute("style");
-    slide.appendChild(slide.firstElementChild);
-  });
-}
 function slideHandler() {
   bulletsLi[photoindex].classList.remove("on");
   photoindex++;
   photoindex %= phtoLength;
   bulletsLi[photoindex].classList.add("on");
 
-  slide.animate({left: photoindex*-100+"%"}, 400, function () {
-    // slide.removeAttribute("style");
-    slide.appendChild(slide.firstElementChild);
-  })
+  slide.removeAttribute("style");
+  slide.appendChild(slide.firstElementChild);
 }
 
 function galleryOut() {
@@ -119,7 +100,6 @@ function init() {
       a.innerHTML = "||";
     }
   });
-  bullets.addEventListener("click", selectedBulletHandler);
   //strategy
   strategy.addEventListener("click", strategyClick);
   overlayStrategy.addEventListener("click", strategyOut);
