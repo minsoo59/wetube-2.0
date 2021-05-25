@@ -15,14 +15,14 @@ const gallery = listWhite.querySelector("li:nth-child(2)"),
   modalGallery = document.getElementById("modalGallery"),
   btnGallery = modalGallery.querySelector("button"),
   overlayGallery = modalGallery.querySelector(".overlay"),
-  picList = document.getElementById("picList"),
-  picListLi = picList.querySelectorAll("li"),
-  sildeList = document.getElementById("silde"),
-  silde = sildeList.querySelector("ul").children;
-let picListToggle = sildeList.querySelector(".picListToggle");
-let isToggle = true;
-let timer = 0;
-
+  slide = document.getElementById("slide"),
+  bullets = document.getElementById("bullets"),
+  bulletsLi = bullets.querySelectorAll("li"),
+ slideToggle = document.getElementById("slideToggle");
+ let  isToggle = true,
+  timer = 0,
+  phtoLength = slide.children.length,
+  photoindex = 0;
 const strategy = listWhite.querySelector("li:nth-child(3)"),
   modalStrategy = document.getElementById("modalStrategy"),
   overlayStrategy = modalStrategy.querySelector(".overlay");
@@ -34,21 +34,35 @@ function strategyOut() {
 function strategyClick() {
   modalStrategy.classList.remove("hiddenStrategy");
 }
+
 //gallery
-
-function slideHandler(event) {
+function selectedBulletHandler(event) {
   event.preventDefault();
-}
+  let index = event.target.innerHTML;
+  JSON.parse(index);
+  let diff = index - photoindex; // 차이값
+  if (diff == 0) return;
+  // if (diff < 0) diff += phtoLength;
 
-console.log(silde);
-function picListHandler() {
-  picList.style.transitionDuration = "400ms";
-  picList.style.left = "-100%";
-  for (n = 0; n <= silde.length; n++) {}
-  setTimeout(function () {
-    picList.removeAttribute("style");
-    picList.appendChild(picList.firstElementChild);
-  }, 400);
+  bulletsLi[index].classList.add("on");
+  bulletsLi[photoindex].classList.remove("on");
+  photoindex = index;
+
+  slide.animate({ left: diff * -100 + "%" }, 400, function () {
+    slide.removeAttribute("style");
+    slide.appendChild(slide.firstElementChild);
+  });
+}
+function slideHandler() {
+  bulletsLi[photoindex].classList.remove("on");
+  photoindex++;
+  photoindex %= phtoLength;
+  bulletsLi[photoindex].classList.add("on");
+
+  slide.animate({left: photoindex*-100+"%"}, 400, function () {
+    // slide.removeAttribute("style");
+    slide.appendChild(slide.firstElementChild);
+  })
 }
 
 function galleryOut() {
@@ -92,20 +106,20 @@ function init() {
   gallery.addEventListener("click", galleryClick);
   btnGallery.addEventListener("click", galleryOut);
   overlayGallery.addEventListener("click", galleryOut);
-  let timer = setInterval(picListHandler, 2000);
-  picListToggle.addEventListener("click", function () {
+  let timer = setInterval(slideHandler, 2000);
+  slideToggle.addEventListener("click", function () {
+    let a = slideToggle.children[0];
     if (isToggle === true) {
       clearTimeout(timer);
       isToggle = false;
-      picListToggle.children[0].innerHTML = "▶";
+      a.innerHTML = "▶";
     } else {
-      timer = setInterval(picListHandler, 2000);
+      timer = setInterval(slideHandler, 2000);
       isToggle = true;
-      picListToggle.children[0].innerHTML = "||";
+      a.innerHTML = "||";
     }
   });
-  sildeList.addEventListener("click", slideHandler);
-
+  bullets.addEventListener("click", selectedBulletHandler);
   //strategy
   strategy.addEventListener("click", strategyClick);
   overlayStrategy.addEventListener("click", strategyOut);
