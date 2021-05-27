@@ -46,7 +46,7 @@
 
 # 2. clonecoding
 
-## - 1. <a href="https://nomadcoders.co/javascript-for-beginners-2">그림판</a>
+## - 1. <a href="https://nomadcoders.co/javascript-for-beginners-2" blank="_blank">그림판</a>
 
 - use : html/css, vanillaJS
 - 구현 기능 :
