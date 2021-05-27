@@ -1,6 +1,6 @@
 # 1. Homepage
 
-## 1. persenal
+## - 1. persenal
 
 - use : html/css, vanillaJS
 - 구현기능 : dropdown
@@ -15,7 +15,7 @@
   - skils-projects : 했던 프로젝트 목록
     ![4](https://user-images.githubusercontent.com/73215507/119751459-2fd99700-bed6-11eb-9c9f-d38d367f2edb.jpg)
 
-## 2. Epic7pan page
+## - 2. Epic7pan page
 
 - use : html/css, vanillaJS
 - 구현기능 : modal, slide, auto slide
@@ -40,20 +40,20 @@
 
 # 2. clonecoding
 
-## 1. 그림판
+## - 1. 그림판
 
 - use : html/css, vanillaJS
 - 구현 기능 : HTML 5 Canvas, Mouse Events, 2D Context, 2D Paditing, Brush Size, Image Saving
 
 ![1](https://user-images.githubusercontent.com/73215507/119764289-15aab380-beec-11eb-8e05-9a773088af3f.jpg)
 
-## 2. todolist
+## - 2. todolist
 
 - use : html/css, vanillaJS
 - 구현 기능 : clock, to do list, get geolocation, get weather information
   ![1](https://user-images.githubusercontent.com/73215507/119764307-1cd1c180-beec-11eb-8b8d-8bf953f8800a.jpg)
 
-## 3. wetube(유튜브) 구현중
+## - 3. wetube(유튜브) 구현중
 
 - use : html/css, ES6, nodeJS, pug, mongoDB
 - 구현기능 : 1. Users :
