@@ -3,7 +3,10 @@
 ## - 1. persenal
 
 - use : html/css, vanillaJS
-- 구현기능 : [x] dropdown
+- 구현기능 :
+
+  - [x] dropdown
+
   ![1](https://user-images.githubusercontent.com/73215507/119751455-2e0fd380-bed6-11eb-90d3-21874516d713.jpg)
 
   - introduce : 간단한 신상과 보유 자격증
@@ -43,7 +46,7 @@
 
 # 2. clonecoding
 
-## - 1. 그림판
+## - 1. 그림판 https://nomadcoders.co/javascript-for-beginners-2
 
 - use : html/css, vanillaJS
 - 구현 기능 :
@@ -56,7 +59,7 @@
 
 ![1](https://user-images.githubusercontent.com/73215507/119764289-15aab380-beec-11eb-8e05-9a773088af3f.jpg)
 
-## - 2. todolist
+## - 2. todolist https://nomadcoders.co/javascript-for-beginners
 
 - use : html/css, vanillaJS
 - 구현 기능 :
@@ -67,7 +70,32 @@
 
 ![1](https://user-images.githubusercontent.com/73215507/119764307-1cd1c180-beec-11eb-8b8d-8bf953f8800a.jpg)
 
-## - 3. wetube(유튜브) 구현중
+## - 3. wetube(유튜브) 구현중 https://nomadcoders.co/wetube
 
-- use : html/css, ES6, nodeJS, pug, mongoDB
-- 구현기능 : 1. Users :
+- use :
+  - 프론트엔드 : html/css, ES6, pug
+  - 백엔드 : nodeJS, mongoDB, Express
+- 구현기능
+  - 1. Users :
+    - [] User Authentication
+    - [] Facebook Login
+    - [] Github Login
+    - [] User Profile
+    - [] Log in
+    - [] Log Out
+  - 2. Videos :
+    - [] Video Upload
+    - [] Video Recording
+    - [] Search Video
+    - [] AJAX Comments
+    - [] View Count
+  - 3. Deployment
+    - [] Heroku
+    - [] S3 Upload
+    - [] Mongo Atlas
+  - 4. Theory
+    - [x] MVC
+    - [x] Routing
+    - [x] Templates
+    - [x] Models
+    - [x] Relationships
