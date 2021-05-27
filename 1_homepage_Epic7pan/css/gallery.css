@@ -17,7 +17,7 @@
 /* what it's expressed the order*/
 #bullets {
   position: absolute;
-    display: inline;
+  display: inline;
   height: auto;
   text-align: center;
   left: 50%;
@@ -29,7 +29,7 @@
   border-radius: 50%;
   border: 5px solid white;
   padding: 2.5px;
-  cursor: pointer;
+  /* cursor: pointer; */
   margin: 7.5px 0;
   width: 15px;
   height: 15px;
@@ -40,7 +40,7 @@
 #bullets > li > a {
   line-height: 15px;
   text-decoration: none;
-  opacity: 0;
+  visibility: hidden;
 }
 #slideToggle {
   display: inline-block;
@@ -58,4 +58,3 @@
   text-decoration: none;
   color: white;
 }
-

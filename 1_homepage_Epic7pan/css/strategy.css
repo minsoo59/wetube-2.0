@@ -5,7 +5,7 @@
   padding: 50px;
   text-align: center;
 }
-.upload_list {
+#upload_list {
   margin: auto 0;
   height: 30px;
   line-height: 30px;
@@ -15,30 +15,30 @@
   margin-bottom: 5px;
   font-weight: bold;
 }
-.upload_list > li {
+#upload_list > li {
   display: block;
   border: none;
   padding: 0 15px;
   cursor: pointer;
 }
-.upload_list > li:first-child {
+#upload_list > li:first-child {
   padding-left: 15px;
 }
-.upload_list > li:not(:last-child) {
+#upload_list > li:not(:last-child) {
   float: left;
   font-size: 15px;
 }
-.upload_list > li:last-child {
+#upload_list > li:last-child {
   float: right;
   padding-right: 15px;
   font-weight: bold;
 }
-.upload_list::after {
+#upload_list::after {
   content: "";
   display: block;
   clear: both;
 }
-.upload_list > li.selected {
+#upload_list > li.selected {
   color: #ff5000;
   background-color: white;
   border-bottom: 2px solid white;
