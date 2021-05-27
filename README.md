@@ -1,3 +1,5 @@
+# 기술블러그 : https://blog.naver.com/minsoo59
+
 # 1. Homepage
 
 ## - 1. persenal
