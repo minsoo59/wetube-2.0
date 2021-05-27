@@ -27,7 +27,7 @@
       ![3](https://user-images.githubusercontent.com/73215507/119752064-446a5f00-bed7-11eb-86ca-c78475190eb1.jpg)
   - 상단 메뉴(Gallery)) 클릭시 모달창 나오는 화면
 
-    - setinteral 효과를 줘서 슬라이드 기능 자동화
+    - setinterval 효과를 줘서 슬라이드 기능 자동화
     - 슬라이드 기능 재생/일시정지 버튼
       ![4](https://user-images.githubusercontent.com/73215507/119752068-4502f580-bed7-11eb-851f-50fc804aa7ee.jpg)
 
