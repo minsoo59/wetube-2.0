@@ -46,7 +46,7 @@
 
 # 2. clonecoding
 
-## - 1. <a href="https://nomadcoders.co/javascript-for-beginners-2" blank=_blank>그림판</a>
+## - 1. <a href="https://nomadcoders.co/javascript-for-beginners-2" target="_blank">그림판</a>
 
 - use : html/css, vanillaJS
 - 구현 기능 :
@@ -59,7 +59,7 @@
 
 ![1](https://user-images.githubusercontent.com/73215507/119764289-15aab380-beec-11eb-8e05-9a773088af3f.jpg)
 
-## - 2. todolist https://nomadcoders.co/javascript-for-beginners
+## - 2. <a href="https://nomadcoders.co/javascript-for-beginners" target="_blank">todolist</a>
 
 - use : html/css, vanillaJS
 - 구현 기능 :
@@ -70,7 +70,7 @@
 
 ![1](https://user-images.githubusercontent.com/73215507/119764307-1cd1c180-beec-11eb-8b8d-8bf953f8800a.jpg)
 
-## - 3. wetube(유튜브) 구현중 https://nomadcoders.co/wetube
+## - 3. <a href="https://nomadcoders.co/wetube" target="_blank">wetube(유튜브)</a> 구현중
 
 - use :
   - 프론트엔드 : html/css, ES6, pug
