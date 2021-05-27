@@ -3,7 +3,7 @@
 ## - 1. persenal
 
 - use : html/css, vanillaJS
-- 구현기능 : dropdown
+- 구현기능 : [x] dropdown
   ![1](https://user-images.githubusercontent.com/73215507/119751455-2e0fd380-bed6-11eb-90d3-21874516d713.jpg)
 
   - introduce : 간단한 신상과 보유 자격증
@@ -18,7 +18,10 @@
 ## - 2. Epic7pan page
 
 - use : html/css, vanillaJS
-- 구현기능 : modal, slide, auto slide
+- 구현기능 :
+  - [x] modal
+  - [x] slide
+  - [x] auto slide
 - 첫화면 and 메뉴
   ![1](https://user-images.githubusercontent.com/73215507/119752061-43393200-bed7-11eb-86b3-3e127a18f07c.jpg)
 
@@ -43,15 +46,26 @@
 ## - 1. 그림판
 
 - use : html/css, vanillaJS
-- 구현 기능 : HTML 5 Canvas, Mouse Events, 2D Context, 2D Paditing, Brush Size, Image Saving
+- 구현 기능 :
+  - [x] HTML 5 Canvas
+  - [x] Mouse Events
+  - [x] 2D Context
+  - [x] 2D Paditing
+  - [x] Brush Size
+  - [x] Image Saving
 
 ![1](https://user-images.githubusercontent.com/73215507/119764289-15aab380-beec-11eb-8e05-9a773088af3f.jpg)
 
 ## - 2. todolist
 
 - use : html/css, vanillaJS
-- 구현 기능 : clock, to do list, get geolocation, get weather information
-  ![1](https://user-images.githubusercontent.com/73215507/119764307-1cd1c180-beec-11eb-8b8d-8bf953f8800a.jpg)
+- 구현 기능 :
+  - [x] clock
+  - [x] to do list
+  - [x] get geolocation
+  - [x] get weather information
+
+![1](https://user-images.githubusercontent.com/73215507/119764307-1cd1c180-beec-11eb-8b8d-8bf953f8800a.jpg)
 
 ## - 3. wetube(유튜브) 구현중
 
