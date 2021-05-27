@@ -40,9 +40,9 @@
 - 1. 그림판
 
   - 사용언어 : html/css, vanillaJS
-  - 구현 기능 : HTML 5 Canvas, Mouse Events, 2D Context,
-    2D Paditing, Brush Size, Image Saving
-    ![1](https://user-images.githubusercontent.com/73215507/119764289-15aab380-beec-11eb-8e05-9a773088af3f.jpg)
+  - 구현 기능 : HTML 5 Canvas, Mouse Events, 2D Context, 2D Paditing, Brush Size, Image Saving
+
+  ![1](https://user-images.githubusercontent.com/73215507/119764289-15aab380-beec-11eb-8e05-9a773088af3f.jpg)
 
 - 2. todolist
 
@@ -51,4 +51,4 @@
     ![1](https://user-images.githubusercontent.com/73215507/119764307-1cd1c180-beec-11eb-8b8d-8bf953f8800a.jpg)
 
 - 3. wetube(유튜브)
-  - 현재 구현중 ()
+  - 현재 구현중
