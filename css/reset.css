@@ -144,9 +144,3 @@ body {
   margin: 7% 0;
   padding: 30px;
 }
-
-#background::after {
-  content: "";
-  display: block;
-  clear: both;
-}
