@@ -29,7 +29,7 @@
   width: 1000%;
   float: left;
 }
-#videoList > ul > .video > a > img {
+#videoList > ul > .video > iframe {
   float: left;
   width: 400px;
 }
@@ -83,18 +83,15 @@
   right: 0;
 }
 /* when images were clicked */
-.videoBig {
+/* .videoBig {
   position: fixed;
   top: 50%;
-  width: 150%;
+
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center;
   z-index: 1;
 }
-img.video_mid {
+iframe.video_mid {
   display: block;
-  width: 100%;
-  border-radius: 15px;
   cursor: pointer;
-}
+} */

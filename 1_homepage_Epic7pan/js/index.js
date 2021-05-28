@@ -7,9 +7,9 @@ const detail = listWhite.querySelector("li:nth-child(1)"),
   prev = document.getElementById("prev"),
   next = document.getElementById("next"),
   videoList = document.getElementById("videoList"),
-  ul = videoList.querySelector("ul"),
-  videoBig = document.getElementById("videoBig"),
-  changeImg = videoBig.querySelector("img.video_mid");
+  ul = videoList.querySelector("ul");
+// videoBig = document.getElementById("videoBig"),
+// changeImg = videoBig.querySelector("iframe.video_mid");
 
 const gallery = listWhite.querySelector("li:nth-child(2)"),
   modalGallery = document.getElementById("modalGallery"),
@@ -67,14 +67,15 @@ function galleryClick() {
   modalGallery.classList.remove("hiddenGallery");
 }
 //detail
-function videoOut(event) {
-  event.preventDefault();
-  videoBig.classList.add("hiddenDetail");
-}
-function ulVideoHandler(event) {
-  videoBig.classList.remove("hiddenDetail");
-  changeImg.src = event.target.src;
-}
+// function videoOut(event) {
+//   event.preventDefault();
+//   videoBig.classList.add("hiddenDetail");
+// }
+// function ulVideoHandler(event) {
+//   event.target.src;
+//   videoBig.classList.remove("hiddenDetail");
+//   changeImg.src = event.target.src;
+// }
 function nextHandler() {
   // = ul.firstElementChild.appendTo("ul") ul에 ul첫번째 자식요소를 이동시킴
   ul.append(ul.firstElementChild);
@@ -95,8 +96,8 @@ function init() {
   overlayDetail.addEventListener("click", detailout);
   prev.addEventListener("click", prevHandler);
   next.addEventListener("click", nextHandler);
-  ul.addEventListener("click", ulVideoHandler);
-  videoBig.addEventListener("click", videoOut);
+  // ul.addEventListener("click", ulVideoHandler);
+  // videoBig.addEventListener("click", videoOut);
   //gallery
   gallery.addEventListener("click", galleryClick);
   btnGallery.addEventListener("click", galleryOut);
