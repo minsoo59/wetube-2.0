@@ -10,6 +10,7 @@
 }
 #content-intro,
 #content-certi {
+  display: inline;
   float: left;
 }
 
@@ -23,16 +24,16 @@
   font-weight: bold;
   font-size: 14px;
 }
-#content-intro > ul > li {
-  display: flex;
+#content-intro > ul > li:last-child {
+  display: inline-block;
 }
 
 #content-intro > ul > li:nth-child(1),
 #content-intro > ul > li:nth-child(3) {
   float: left;
 }
-#content-intro > ul > li:nth-child(3) {
-  margin-right: -10px;
+#content-intro > ul > li:nth-child(2) {
+  margin-left: 70px;
 }
 img {
   float: left;
