@@ -39,3 +39,26 @@ img {
   float: left;
   padding: 0 30px;
 }
+@media (max-width: 1130px) {
+  #area_intro {
+    padding: 20px;
+    padding-left: 40px;
+  }
+  #area_certi {
+    padding: 0;
+  }
+  #middleObj {
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    width: 480px;
+    padding: 20px 0px;
+    margin: 0 auto;
+  }
+  #content-certi > ul > li{
+    font-size: 12px;
+
+  }
+  .menu {
+    display: none;
+  }

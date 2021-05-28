@@ -49,3 +49,6 @@ img {
   display: block;
   clear: both;
 }
+
+@media (min-width: 800px) {
+}
