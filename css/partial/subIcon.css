@@ -14,7 +14,8 @@
 }
 
 /* coding, projects menu icon */
-#sidebar > #skills {
+#skillsCoding_page,
+#skillsProjects_page {
   padding: 15px;
   width: 65px;
   background-color: #8f8681;
