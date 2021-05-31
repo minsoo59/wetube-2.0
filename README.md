@@ -31,10 +31,10 @@
   ![1](https://user-images.githubusercontent.com/73215507/119752061-43393200-bed7-11eb-86b3-3e127a18f07c.jpg)
 
   - 상단 메뉴(Detail) 클릭시 모달창 나오는 화면
+
     - 슬라이더 기능
-      ![2](https://user-images.githubusercontent.com/73215507/119752062-43d1c880-bed7-11eb-8937-03020d8a012c.jpg)
-    - 그림 클릭시 확대  
-      ![3](https://user-images.githubusercontent.com/73215507/119752064-446a5f00-bed7-11eb-86ca-c78475190eb1.jpg)
+      ![Screenshot 2021-05-30 at 12 58 26](https://user-images.githubusercontent.com/73215507/120091517-c4e2c700-c146-11eb-9d2a-fb3084fc57bc.jpg)
+
   - 상단 메뉴(Gallery)) 클릭시 모달창 나오는 화면
 
     - setinterval 효과를 줘서 슬라이드 기능 자동화
@@ -76,7 +76,7 @@
 
 - use :
   - 프론트엔드 : html/css, ES6, pug
-  - 백엔드 : nodeJS, mongoDB, Express
+  - 백엔드 : nodeJS Express, mongoDB
 - 구현기능
   - 1. Users :
     - [] User Authentication
