@@ -32,14 +32,17 @@
 
   - 상단 메뉴(Detail) 클릭시 모달창 나오는 화면
     - 슬라이더 기능
-      ![Screenshot 2021-05-30 at 12 58 26](https://user-images.githubusercontent.com/73215507/120091517-c4e2c700-c146-11eb-9d2a-fb3084fc57bc.jpg)
-
+      ![2](https://user-images.githubusercontent.com/73215507/119752062-43d1c880-bed7-11eb-8937-03020d8a012c.jpg)
+    - 그림 클릭시 확대  
+      ![3](https://user-images.githubusercontent.com/73215507/119752064-446a5f00-bed7-11eb-86ca-c78475190eb1.jpg)
   - 상단 메뉴(Gallery)) 클릭시 모달창 나오는 화면
+
     - setinterval 효과를 줘서 슬라이드 기능 자동화
     - 슬라이드 기능 재생/일시정지 버튼
       ![4](https://user-images.githubusercontent.com/73215507/119752068-4502f580-bed7-11eb-851f-50fc804aa7ee.jpg)
 
   - 상단 메뉴(Strategy)) 클릭시 모달창 나오는 화면
+
     - 향후 추가 예정(CRUD)
       ![5](https://user-images.githubusercontent.com/73215507/119752058-42080500-bed7-11eb-8a70-e3dea8f1fd85.jpg)
 
@@ -73,7 +76,7 @@
 
 - use :
   - 프론트엔드 : html/css, ES6, pug
-  - 백엔드 : nodeJS Express, mongoDB
+  - 백엔드 : nodeJS, mongoDB, Express
 - 구현기능
   - 1. Users :
     - [] User Authentication
