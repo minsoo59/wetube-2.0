@@ -98,7 +98,25 @@ function init() {
   next.addEventListener("click", nextHandler);
   // ul.addEventListener("click", ulVideoHandler);
   // videoBig.addEventListener("click", videoOut);
+
   //gallery
+  // 이벤트 발생시 생성된 li의 length가 0으로 표시되어 슬라이드이벤트가 발생하지 않는 문제가 발생.
+  // fetch("list/slide").then(function (response) {
+  //   response.text().then(function (text) {
+  //     let items = text.split(",");
+  //     let tags = "";
+  //     for (let n = 0; n < items.length; n++) {
+  //       let item = items[n];
+  //       item = item.trim();
+  //       let tag = `<li><img src="images/row/JPEG/${item}.jpg" alt="${item}"/></li>`;
+  //       tags = tags + tag;
+  //     }
+  //     document.querySelector("#slide").innerHTML = tags;
+  //   });
+  //   if (response.status == "404") {
+  //     alert("Not found");
+  //   }
+  // });
   gallery.addEventListener("click", galleryClick);
   btnGallery.addEventListener("click", galleryOut);
   overlayGallery.addEventListener("click", galleryOut);
