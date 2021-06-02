@@ -15,4 +15,4 @@ fetch("list/slide").then(function (response) {
   }
 });
 
-export default fetch;
+// export default "fetch";
