@@ -10,11 +10,18 @@ const listWhite = document.getElementById("listWhite"),
 
 let isToggle = true,
   timer = 0,
+<<<<<<< HEAD
   phtoLength = 5, // 이 값이 fetch로 인해 0으로 바뀜 5에서
   photoindex = 0;
 
 function slideHandler() {
   // if (photoindex == 0) buLi[photoindex].classList.add("on");
+=======
+  phtoLength = slide.children.length, // 좀이따 fetch
+  photoindex = 0;
+
+function slideHandler() {
+>>>>>>> ab560b1cb87f258c5ff105a05e5b63f6b51d3de5
   buLi[photoindex].classList.remove("on");
   photoindex++;
   photoindex %= phtoLength;
