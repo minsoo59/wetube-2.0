@@ -2,11 +2,14 @@ const listWhite = document.getElementById("listWhite"),
   menu = listWhite.querySelector("li:nth-child(3)"),
   modal = document.getElementById("modalStrategy"),
   overlay = modal.querySelector(".overlay"),
-  uList = document.getElementById("upload_list"),
-  uChild = uList.querySelectorAll("li");
+  uList = document.getElementById("upload_list");
+let uChild = uList.children;
 
 function uListSeclected(event) {
-  uChild.forEach((list) => list.classList.remove("selected"));
+  // uChild.forEach((list) => list.classList.remove("selected"));
+  for (let n = 0; n < uChild.length; n++) {
+    uChild[n].classList.remove("selected");
+  }
   let p = event.target.parentElement;
   let selecIndex = Array.prototype.indexOf.call(p.children, event.target);
   uChild[selecIndex].classList.add("selected");
@@ -23,10 +26,6 @@ function sClick() {
 function init() {
   menu.addEventListener("click", sClick);
   overlay.addEventListener("click", sOut);
-
-  // ajax로 목록을 생성했을 때 이 이벤트명령이 씹힘. 비동기 코드라서 다 실행되고 되니까 그런듯?
-  // uChild[0].classList.add("selected");
-
   uList.addEventListener("click", uListSeclected);
 }
 

@@ -26,6 +26,7 @@ function dClick() {
 function init() {
   menu.addEventListener("click", dClick);
   btn.addEventListener("click", dout);
+  // 이벤트발생한거랑 컨트롤러 부분 그러니까 프론트엔드쪽 이벤트 발생부분이랑 백엔드 컨트롤러 이어야함.
   overlay.addEventListener("click", dout);
   // slide button
   prev.addEventListener("click", prevHandler);

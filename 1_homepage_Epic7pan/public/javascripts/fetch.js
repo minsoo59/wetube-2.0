@@ -1,4 +1,4 @@
-fetch("list/slide").then(function (response) {
+fetch("../javascripts/list/slide").then(function (response) {
   response.text().then(function (text) {
     let items = text.split(",");
     let tags = "";
@@ -15,7 +15,7 @@ fetch("list/slide").then(function (response) {
   }
 });
 
-fetch("list/videos").then(function (response) {
+fetch("../javascripts/list/videos").then(function (response) {
   response.text().then(function (text) {
     let items = text.split(",");
     let tags = "";
@@ -37,14 +37,19 @@ fetch("list/videos").then(function (response) {
   }
 });
 
-fetch("list/upload_list").then(function (response) {
+fetch("../javascripts/list/upload_list").then(function (response) {
   response.text().then(function (text) {
     let items = text.split(",");
     let tags = "";
     for (let n = 0; n < items.length; n++) {
       let item = items[n];
       item = item.trim();
-      let tag = `<li>${item}</li>`;
+      let tag;
+      if (item === "전체보기") {
+        tag = `<li class="selected">${item}</li>`;
+      } else {
+        tag = `<li>${item}</li>`;
+      }
       tags = tags + tag;
     }
     document.querySelector("#upload_list").innerHTML = tags;
@@ -54,4 +59,4 @@ fetch("list/upload_list").then(function (response) {
   }
 });
 
-export default "fetch".js;
+export default fetch;
