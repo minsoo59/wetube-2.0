@@ -88,7 +88,7 @@
     - [] Log in
     - [] Log Out
   - 2. Videos :
-    - [] Video Upload
+    - [x] Video Upload
     - [] Video Recording
     - [] Search Video
     - [] AJAX Comments
