@@ -22,7 +22,9 @@
 
 ## - 2. Epic7pan page
 
-- use : html/css, vanillaJS
+- use :
+  - Front-end : html/css, ES6, pug
+  - Back-end : nodeJS Express, mongoDB
 - 구현기능 :
   - [x] modal
   - [x] slide
@@ -30,18 +32,18 @@
 - 첫화면 and 메뉴
   ![1](https://user-images.githubusercontent.com/73215507/119752061-43393200-bed7-11eb-86b3-3e127a18f07c.jpg)
 
-  - 상단 메뉴(Detail) 클릭시 모달창 나오는 화면
+  - 상단 메뉴(Detail) 클릭시 모달창 나오는 화면(detail)
 
     - 슬라이더 기능
       ![Screenshot 2021-05-30 at 12 58 26](https://user-images.githubusercontent.com/73215507/120091517-c4e2c700-c146-11eb-9d2a-fb3084fc57bc.jpg)
 
-  - 상단 메뉴(Gallery)) 클릭시 모달창 나오는 화면
+  - 상단 메뉴(Gallery)) 클릭시 모달창 나오는 화면(gallery)
 
     - setinterval 효과를 줘서 슬라이드 기능 자동화
     - 슬라이드 기능 재생/일시정지 버튼
       ![4](https://user-images.githubusercontent.com/73215507/119752068-4502f580-bed7-11eb-851f-50fc804aa7ee.jpg)
 
-  - 상단 메뉴(Strategy)) 클릭시 모달창 나오는 화면
+  - 상단 메뉴(Strategy)) 클릭시 모달창 나오는 화면(strategy)
 
     - 향후 추가 예정(CRUD)
       ![5](https://user-images.githubusercontent.com/73215507/119752058-42080500-bed7-11eb-8a70-e3dea8f1fd85.jpg)
@@ -95,11 +97,5 @@
     - [] Heroku
     - [] S3 Upload
     - [] Mongo Atlas
-  - 4. Theory
-    - [x] MVC
-    - [x] Routing
-    - [x] Templates
-    - [x] Models
-    - [x] Relationships
 
 ![1](https://user-images.githubusercontent.com/73215507/119769029-a84f5080-bef4-11eb-9a8f-77f3d36d73d2.jpg)
