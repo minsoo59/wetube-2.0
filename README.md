@@ -23,12 +23,16 @@
 ## - 2. Epic7pan page
 
 - use :
+
   - Front-end : html/css, ES6, pug
-  - Back-end : nodeJS Express, mongoDB
+  - Back-end : nodeJS Express
+
 - 구현기능 :
+
   - [x] modal
   - [x] slide
   - [x] auto slide
+
 - 첫화면 and 메뉴
   ![1](https://user-images.githubusercontent.com/73215507/119752061-43393200-bed7-11eb-86b3-3e127a18f07c.jpg)
 
