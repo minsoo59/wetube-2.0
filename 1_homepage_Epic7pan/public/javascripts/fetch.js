@@ -1,5 +1,5 @@
-fetch("../javascripts/list/slide").then(function (response) {
-  response.text().then(function (text) {
+fetch("../javascripts/list/slide").then(function (res) {
+  res.text().then(function (text) {
     let items = text.split(",");
     let tags = "";
     for (let n = 0; n < items.length; n++) {
@@ -8,15 +8,15 @@ fetch("../javascripts/list/slide").then(function (response) {
       let tag = `<li><img src="images/row/JPEG/${item}.jpg" alt="${item}"/></li>`;
       tags = tags + tag;
     }
-    document.querySelector("#slide").innerHTML = tags;
+    document.getElementById("slide").innerHTML = tags;
   });
-  if (response.status == "404") {
+  if (res.status == "404") {
     alert("Not found");
   }
 });
 
-fetch("../javascripts/list/videos").then(function (response) {
-  response.text().then(function (text) {
+fetch("../javascripts/list/videos").then(function (res) {
+  res.text().then(function (text) {
     let items = text.split(",");
     let tags = "";
     for (let n = 0; n < items.length; n++) {
@@ -32,13 +32,13 @@ fetch("../javascripts/list/videos").then(function (response) {
     }
     document.querySelector("#videoList > ul").innerHTML = tags;
   });
-  if (response.status == "404") {
+  if (res.status == "404") {
     alert("Not found");
   }
 });
 
-fetch("../javascripts/list/upload_list").then(function (response) {
-  response.text().then(function (text) {
+fetch("../javascripts/list/upload_list").then(function (res) {
+  res.text().then(function (text) {
     let items = text.split(",");
     let tags = "";
     for (let n = 0; n < items.length; n++) {
@@ -52,9 +52,9 @@ fetch("../javascripts/list/upload_list").then(function (response) {
       }
       tags = tags + tag;
     }
-    document.querySelector("#upload_list").innerHTML = tags;
+    document.getElementById("upload_list").innerHTML = tags;
   });
-  if (response.status == "404") {
+  if (res.status == "404") {
     alert("Not found");
   }
 });

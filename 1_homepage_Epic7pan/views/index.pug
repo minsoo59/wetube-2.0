@@ -1,16 +1,6 @@
-doctype html
-html
-  head
-    title= title
-    link(rel="stylesheet" href='/stylesheets/index.css')
-  body
-    #listWhite 
-      ul 
-        li Detail 
-        li Gallery 
-        li Strategy 
-    include detail 
-    include gallery
-    include strategy
-    block content 
-    script(type="module" src="/javascripts/index.js") 
+extends layout
+
+block content
+  include detail 
+  include gallery
+  include strategy

@@ -2,8 +2,17 @@ const listWhite = document.getElementById("listWhite"),
   menu = listWhite.querySelector("li:nth-child(3)"),
   modal = document.getElementById("modalStrategy"),
   overlay = modal.querySelector(".overlay"),
-  uList = document.getElementById("upload_list");
+  uList = document.getElementById("upload_list"),
+  write = document.getElementById("write"),
+  upload = document.getElementById("upload"),
+  item_create = document.getElementById("item_create");
 let uChild = uList.children;
+
+function writeHandler() {
+  upload.style.display = "none";
+  item_create.style.display = "block";
+  // location.href = "/create";
+}
 
 function uListSeclected(event) {
   // uChild.forEach((list) => list.classList.remove("selected"));
@@ -27,6 +36,7 @@ function init() {
   menu.addEventListener("click", sClick);
   overlay.addEventListener("click", sOut);
   uList.addEventListener("click", uListSeclected);
+  write.addEventListener("click", writeHandler);
 }
 
 init();

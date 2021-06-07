@@ -77,18 +77,25 @@ ul.item > li:nth-child(3) {
 
 #write {
   display: inline;
-  width: 50px;
+  /* position: absolute;
+  left: 50%; */
   height: auto;
   float: right;
   text-align: center;
-  background-color: #ff5000;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 10px 20px;
   margin-top: 20px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+#write > a {
+  display: block;
+  width: 50px;
+  background-color: #ff5000;
+  padding: 10px 20px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
 }
 #goto {
   display: block;
@@ -112,4 +119,10 @@ ul.item > li:nth-child(3) {
   float: left;
   width: 100%;
   margin: 10px;
+}
+
+#item_create {
+  position: relative;
+  left: 50%;
+  /* display: none; */
 }
