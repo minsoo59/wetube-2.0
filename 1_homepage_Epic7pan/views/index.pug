@@ -1,6 +1,20 @@
 extends layout
+include mixins/write
 
-block content
-  include detail 
-  include gallery
-  include strategy
+block create 
+    header 
+      h1#pageTitle=pageTitle 
+    main 
+      #item_create 
+        form(method="POST")
+          p
+            input(type="text", name="title" placeholder="title")
+          p
+            textarea(name="description" placeholder="description")
+          p
+            input(type="submit", value="submit")
+      ul 
+        each item in writingList 
+          +write(item)
+        else 
+          li Sorry nothing found.  

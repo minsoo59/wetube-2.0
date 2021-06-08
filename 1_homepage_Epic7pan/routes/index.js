@@ -1,15 +1,12 @@
 var express = require("express");
-const { index } = require("../controllers/indexController");
+const { index, postCreate } = require("../controllers/indexController");
 var router = express.Router();
 let path = require("path");
 let fs = require("fs");
 var sanitizeHtml = require("sanitize-html");
 
 /* GET home page. */
-router.route("/").get(index);
-// router
-//   .route("/create")
-//   .get(getCreate)
+router.route("/").get(index).post(postCreate);
 //   .post(async (req, res) => {
 //     return res.render("create", { title: "create" });
 //   });

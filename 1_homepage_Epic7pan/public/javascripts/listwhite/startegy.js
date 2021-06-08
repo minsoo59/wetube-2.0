@@ -5,12 +5,15 @@ const listWhite = document.getElementById("listWhite"),
   uList = document.getElementById("upload_list"),
   write = document.getElementById("write"),
   upload = document.getElementById("upload"),
-  item_create = document.getElementById("item_create");
+  item_create = document.getElementById("item_create"),
+  pageTitle = document.getElementById("pageTitle");
 let uChild = uList.children;
 
 function writeHandler() {
+  // event.preventDefault();
   upload.style.display = "none";
   item_create.style.display = "block";
+  pageTitle.style.display = "block";
   // location.href = "/create";
 }
 

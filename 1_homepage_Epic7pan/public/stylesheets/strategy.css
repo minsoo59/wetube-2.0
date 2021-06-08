@@ -120,9 +120,10 @@ ul.item > li:nth-child(3) {
   width: 100%;
   margin: 10px;
 }
-
+#pageTitle {
+  display: none;
+}
 #item_create {
-  position: relative;
-  left: 50%;
-  /* display: none; */
+  position: absolute;
+  display: none;
 }

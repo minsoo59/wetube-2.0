@@ -1,13 +1,20 @@
 doctype html
 html
   head
-    title= title
+    title #{pageTitle} | Epic7pan 
+    link(rel="stylesheet" href="https://unpkg.com/mvp.css")
     link(rel="stylesheet" href='/stylesheets/index.css')
   body
-    #listWhite 
-      ul 
-        li Detail 
-        li Gallery 
-        li Strategy 
-    block content 
+    header 
+      #listWhite 
+        ul 
+          li Detail 
+          li Gallery 
+          li Strategy 
+      include partials/detail
+      include partials/gallery
+      include partials/strategy
+      block content 
+    main 
+      h2 Hello this is Epic7pan page!
     script(type="module" src="/javascripts/index.js") 
