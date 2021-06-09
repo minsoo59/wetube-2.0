@@ -21,23 +21,19 @@ fetch("../javascripts/list/upload_list").then(function (res) {
   }
 });
 
-const listWhite = document.getElementById("listWhite"),
-  // menu = listWhite.querySelector("li:nth-child(3)"),
-  modal = document.getElementById("modalStrategy"),
+const modal = document.getElementById("modalStrategy"),
   overlay = modal.querySelector(".overlay"),
+  upload = document.getElementById("upload"),
+  itmeTitle = document.getElementById("itmeTitle"),
   uList = document.getElementById("upload_list"),
   write = document.getElementById("write"),
-  upload = document.getElementById("upload"),
-  item = document.getElementById("item"),
-  // itemTitle = item.querySelectorAll("div > h4 > li"),
-  writeingList = document.getElementById("writeingList"),
-  pageTitle = document.getElementById("pageTitle");
+  goto = document.getElementById("goto");
 let uChild = uList.children;
 
 function writeHandler() {
-  upload.style.display = "none";
-  writeingList.style.display = "block";
-  pageTitle.style.display = "block";
+  uList.style.display = "none";
+  write.style.display = "none";
+  goto.style.display = "none";
 }
 
 function uListSeclected(event) {
@@ -60,11 +56,10 @@ function sClick() {
 }
 
 function init() {
-  // menu.addEventListener("click", sClick);
   overlay.addEventListener("click", sOut);
   uList.addEventListener("click", uListSeclected);
   write.addEventListener("click", writeHandler);
-  // itemTitle.addEventListener("click", writeHandler);
+  itmeTitle.addEventListener("click", writeHandler);
 }
 
 init();

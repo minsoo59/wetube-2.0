@@ -1,7 +1,7 @@
-extends layout
+extends strategyBase
 
-block create
-    h4#pageTitle=boardTitle
+block uploadList
+    h4#pageTitle=pageTitle
     form(method="POST")
         input(name="title" placeholder="Writnig title" value=writing.title required)
         input(value="save" type="submit")

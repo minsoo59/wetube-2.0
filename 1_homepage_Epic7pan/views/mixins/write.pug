@@ -1,8 +1,7 @@
 mixin write(info)
-    div
-        h4
-            a(href=`/${info.id}`)=info.title   
-        ul 
-            li #{info.user}
-            li Poseted #{info.createdAt}
-            li #{info.views} views.
+    ul.item  
+        li
+            a#itmeTitle(href=`/strategy/${info.id}`)=info.title   
+        li #{info.user}
+        li #{info.views} #{info.views === 1 ? "view" : "views"}
+        li #{info.createdAt}

@@ -82,16 +82,3 @@
   top: 0;
   right: 0;
 }
-/* when images were clicked */
-/* .videoBig {
-  position: fixed;
-  top: 50%;
-
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-}
-iframe.video_mid {
-  display: block;
-  cursor: pointer;
-} */

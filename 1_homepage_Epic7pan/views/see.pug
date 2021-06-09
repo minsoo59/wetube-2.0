@@ -1,8 +1,9 @@
-extends layout
+extends strategyBase
 
-block create
-    li=writing.title
-    li=writing.user 
-    li #{writing.views} #{writing.views === 1 ? "view" : "views"} 
-    li #{createdAt}
-    a(href=`${writing.id}/edit`) Edit writing &rarr; 
+block uploadList
+    ul#edit
+        li=writing.title
+        li=writing.user 
+        li #{writing.views} #{writing.views === 1 ? "view" : "views"} 
+        li #{writing.createdAt}
+        a(href=`/strategy/${writing.id}/edit`) Edit writing &rarr; 

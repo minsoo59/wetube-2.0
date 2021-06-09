@@ -5,7 +5,7 @@ let writingList = [
     user: "min1",
     createdAt: "2 mintues ago",
     id: 1,
-    views: 3,
+    views: 1,
   },
   {
     title: "Second",
@@ -64,7 +64,7 @@ const postEdit = (req, res) => {
   const { id } = req.params;
   const { title } = req.body;
   writingList[id - 1].title = title;
-  return res.redirect(`/${id}`);
+  return res.redirect(`/strategy/${id}`);
 };
 
 const upload = (req, res) => {
