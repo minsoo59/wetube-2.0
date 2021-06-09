@@ -1,7 +1,6 @@
 @import "../stylesheets/reset.css";
 @import "../stylesheets/menu.css";
 @import "../stylesheets/modal.css";
-
 body {
   position: relative;
 

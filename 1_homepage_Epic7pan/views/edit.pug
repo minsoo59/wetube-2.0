@@ -1,0 +1,7 @@
+extends layout
+
+block create
+    h4#pageTitle=boardTitle
+    form(method="POST")
+        input(name="title" placeholder="Writnig title" value=writing.title required)
+        input(value="save" type="submit")

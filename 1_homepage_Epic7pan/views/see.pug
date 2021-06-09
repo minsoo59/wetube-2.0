@@ -1,0 +1,8 @@
+extends layout
+
+block create
+    li=writing.title
+    li=writing.user 
+    li #{writing.views} #{writing.views === 1 ? "view" : "views"} 
+    li #{createdAt}
+    a(href=`${writing.id}/edit`) Edit writing &rarr; 

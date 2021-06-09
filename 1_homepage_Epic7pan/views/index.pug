@@ -1,17 +1,11 @@
 extends layout
-include mixins/write
 
-block create 
-    header 
-      h1#pageTitle=pageTitle 
-    main 
-      #item_create 
-        form(method="POST")
-          input(type="text", name="title" placeholder="title")
-          textarea(name="description" placeholder="description")
-          input(type="submit", value="submit")
-      ul#writeingList 
-        each item in writingList 
-          +write(item)
-        else 
-          li Sorry nothing found.  
+block content 
+  #listWhite 
+    ul 
+      li 
+        a(href="/detail") Detail 
+      li 
+        a(href="/gallery") Gallery 
+      li 
+        a(href="/strategy") Strategy

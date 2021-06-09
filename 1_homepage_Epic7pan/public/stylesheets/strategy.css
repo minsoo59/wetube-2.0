@@ -33,11 +33,6 @@
   padding-right: 15px;
   font-weight: bold;
 }
-#upload_list::after {
-  content: "";
-  display: block;
-  clear: both;
-}
 #upload_list > li.selected {
   color: #ff5000;
   background-color: white;
@@ -121,7 +116,6 @@ ul.item > li:nth-child(3) {
   margin: 10px;
 }
 #pageTitle,
-#item_create,
 ul#writeingList {
   /* position: absolute; */
   display: none;

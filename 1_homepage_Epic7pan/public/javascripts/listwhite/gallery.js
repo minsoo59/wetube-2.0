@@ -1,5 +1,23 @@
+//gallery
+fetch("../../javascripts/list/slide").then(function (res) {
+  res.text().then(function (text) {
+    let items = text.split(",");
+    let tags = "";
+    for (let n = 0; n < items.length; n++) {
+      let item = items[n];
+      item = item.trim();
+      let tag = `<li><img src="images/row/JPEG/${item}.jpg" alt="${item}"/></li>`;
+      tags = tags + tag;
+    }
+    document.getElementById("slide").innerHTML = tags;
+  });
+  if (res.status == "404") {
+    alert("Not found");
+  }
+});
+
 const listWhite = document.getElementById("listWhite"),
-  menu = listWhite.querySelector("li:nth-child(2)"),
+  // menu = listWhite.querySelector("li:nth-child(2)"),
   modal = document.getElementById("modalGallery"),
   btn = modal.querySelector("button"),
   overlay = modal.querySelector(".overlay"),
@@ -27,13 +45,14 @@ let mClass = modal.classList;
 let h = "hiddenGallery";
 function gOut() {
   mClass.add(h);
+  location.href = "/";
 }
 function gClick() {
   mClass.remove(h);
 }
 
 function init() {
-  menu.addEventListener("click", gClick);
+  // menu.addEventListener("click", gClick);
   btn.addEventListener("click", gOut);
   overlay.addEventListener("click", gOut);
 
@@ -55,5 +74,3 @@ function init() {
 }
 
 init();
-
-export default "gallery.js";
