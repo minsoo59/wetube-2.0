@@ -1,5 +1,4 @@
 const index = (req, res) => {
-  const date = new Date();
   //writingList
   const writingList = [
     {
@@ -26,8 +25,6 @@ const index = (req, res) => {
   ];
   return res.render("index", { pageTitle: "Create", writingList });
 };
-// const getCreate = async (req, res) =>
-//   res.render("create", { pageTitle: "Create" });
 const postCreate = (req, res) => {
   const form = req.body;
   console.log(form);

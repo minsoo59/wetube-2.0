@@ -6,15 +6,15 @@ const listWhite = document.getElementById("listWhite"),
   write = document.getElementById("write"),
   upload = document.getElementById("upload"),
   item_create = document.getElementById("item_create"),
+  writeingList = document.getElementById("writeingList"),
   pageTitle = document.getElementById("pageTitle");
 let uChild = uList.children;
 
 function writeHandler() {
-  // event.preventDefault();
   upload.style.display = "none";
   item_create.style.display = "block";
+  writeingList.style.display = "block";
   pageTitle.style.display = "block";
-  // location.href = "/create";
 }
 
 function uListSeclected(event) {

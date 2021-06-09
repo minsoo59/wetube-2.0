@@ -7,13 +7,10 @@ block create
     main 
       #item_create 
         form(method="POST")
-          p
-            input(type="text", name="title" placeholder="title")
-          p
-            textarea(name="description" placeholder="description")
-          p
-            input(type="submit", value="submit")
-      ul 
+          input(type="text", name="title" placeholder="title")
+          textarea(name="description" placeholder="description")
+          input(type="submit", value="submit")
+      ul#writeingList 
         each item in writingList 
           +write(item)
         else 
