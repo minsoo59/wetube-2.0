@@ -6,6 +6,7 @@ let writingList = [
     createdAt: "2 mintues ago",
     id: 1,
     views: 1,
+    rating: 2,
   },
   {
     title: "Second",
@@ -13,6 +14,7 @@ let writingList = [
     createdAt: "25 mintues ago",
     id: 2,
     views: 43,
+    rating: 2,
   },
   {
     title: "thrid",
@@ -20,6 +22,7 @@ let writingList = [
     createdAt: "21 mintues ago",
     id: 3,
     views: 5,
+    rating: 2,
   },
 ];
 const strategy = (req, res) => {
@@ -51,8 +54,20 @@ const postEdit = (req, res) => {
   return res.redirect(`/strategy/${id}`);
 };
 
-const upload = (req, res) => {
-  res.send("Upload Writing");
+const getUpload = (req, res) => {
+  return res.render("upload");
+};
+const postUpload = (req, res) => {
+  const { title } = req.body;
+  const newWrite = {
+    title,
+    user: "min3",
+    createdAt: "just now",
+    id: writingList.length + 1,
+    views: 0,
+  };
+  writingList.push(newWrite);
+  return res.redirect("/strategy");
 };
 const deleteWriting = (req, res) => {
   res.send("Delete Writing");
@@ -62,7 +77,8 @@ module.exports = {
   see,
   getEdit,
   postEdit,
-  upload,
+  getUpload,
+  postUpload,
   deleteWriting,
   strategy,
 };

@@ -1,24 +1,25 @@
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+import "./db";
+// import "./models/Write";
+import express from "express";
+import path from "path";
+import morgan from "morgan";
 
-var indexRouter = require("./routes/indexRouter");
-var strategyRouter = require("./routes/strategyRouter");
+import indexRouter from "./routes/indexRouter";
+import strategyRouter from "./routes/strategyRouter";
 
-var app = express();
+const app = express();
+const logger = morgan("dev");
 
 // view engine setup
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/views");
 
-app.use(logger("dev"));
+app.use(logger);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // form의 value들을 이해할 수 있음.
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/strategy", strategyRouter);
 
-module.exports = app;
+export default app;

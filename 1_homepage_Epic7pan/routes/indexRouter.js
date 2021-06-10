@@ -1,10 +1,10 @@
-var express = require("express");
-const { index, detail, gallery } = require("../controllers/indexController");
-var router = express.Router();
+import { Router } from "express";
+import { index, detail, gallery } from "../controllers/indexController";
+var indexRouter = Router();
 
 /* GET home page. */
-router.route("/").get(index);
-router.route("/detail").get(detail);
-router.route("/gallery").get(gallery);
+indexRouter.route("/").get(index);
+indexRouter.route("/detail").get(detail);
+indexRouter.route("/gallery").get(gallery);
 
-module.exports = router;
+export default indexRouter;
