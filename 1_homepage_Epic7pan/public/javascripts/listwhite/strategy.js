@@ -24,7 +24,6 @@ fetch("../javascripts/list/upload_list").then(function (res) {
 const modal = document.getElementById("modalStrategy"),
   overlay = modal.querySelector(".overlay"),
   upload = document.getElementById("upload"),
-  itmeTitle = document.getElementById("itmeTitle"),
   uList = document.getElementById("upload_list"),
   write = document.getElementById("write"),
   goto = document.getElementById("goto");
@@ -59,7 +58,6 @@ function init() {
   overlay.addEventListener("click", sOut);
   uList.addEventListener("click", uListSeclected);
   write.addEventListener("click", writeHandler);
-  itmeTitle.addEventListener("click", writeHandler);
 }
 
 init();
