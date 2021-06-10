@@ -35,10 +35,7 @@ function nextHandler() {
 function prevHandler() {
   ul.prepend(ul.lastElementChild);
 }
-let mClass = modal.classList;
-let h = "hiddenDetail";
 function dout() {
-  mClass.add(h);
   location.href = "/";
 }
 

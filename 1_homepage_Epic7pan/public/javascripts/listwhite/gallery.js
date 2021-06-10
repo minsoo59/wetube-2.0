@@ -16,9 +16,7 @@ fetch("../../javascripts/list/slide").then(function (res) {
   }
 });
 
-const listWhite = document.getElementById("listWhite"),
-  // menu = listWhite.querySelector("li:nth-child(2)"),
-  modal = document.getElementById("modalGallery"),
+const modal = document.getElementById("modalGallery"),
   btn = modal.querySelector("button"),
   overlay = modal.querySelector(".overlay"),
   slide = document.getElementById("slide"),
@@ -32,7 +30,6 @@ let isToggle = true,
   photoindex = 0;
 
 function slideHandler() {
-  // if (photoindex == 0) buLi[photoindex].classList.add("on");
   buLi[photoindex].classList.remove("on");
   photoindex++;
   photoindex %= phtoLength;
@@ -41,18 +38,11 @@ function slideHandler() {
   slide.removeAttribute("style");
   slide.appendChild(slide.firstElementChild);
 }
-let mClass = modal.classList;
-let h = "hiddenGallery";
 function gOut() {
-  mClass.add(h);
   location.href = "/";
-}
-function gClick() {
-  mClass.remove(h);
 }
 
 function init() {
-  // menu.addEventListener("click", gClick);
   btn.addEventListener("click", gOut);
   overlay.addEventListener("click", gOut);
 

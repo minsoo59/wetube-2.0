@@ -24,16 +24,8 @@ fetch("../javascripts/list/upload_list").then(function (res) {
 const modal = document.getElementById("modalStrategy"),
   overlay = modal.querySelector(".overlay"),
   upload = document.getElementById("upload"),
-  uList = document.getElementById("upload_list"),
-  write = document.getElementById("write"),
-  goto = document.getElementById("goto");
+  uList = document.getElementById("upload_list");
 let uChild = uList.children;
-
-function writeHandler() {
-  uList.style.display = "none";
-  write.style.display = "none";
-  goto.style.display = "none";
-}
 
 function uListSeclected(event) {
   // uChild.forEach((list) => list.classList.remove("selected"));
@@ -44,20 +36,13 @@ function uListSeclected(event) {
   let selecIndex = Array.prototype.indexOf.call(p.children, event.target);
   uChild[selecIndex].classList.add("selected");
 }
-let mClass = modal.classList;
-let h = "hiddenStrategy";
 function sOut() {
-  mClass.add(h);
   location.href = "/";
-}
-function sClick() {
-  mClass.remove(h);
 }
 
 function init() {
   overlay.addEventListener("click", sOut);
   uList.addEventListener("click", uListSeclected);
-  write.addEventListener("click", writeHandler);
 }
 
 init();
