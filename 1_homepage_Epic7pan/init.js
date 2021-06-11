@@ -1,3 +1,5 @@
+import "./db";
+import "./models/Write";
 import app from "./server";
 
 const port = 6100;

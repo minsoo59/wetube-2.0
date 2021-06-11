@@ -1,5 +1,3 @@
-import "./db";
-// import "./models/Write";
 import express from "express";
 import path from "path";
 import morgan from "morgan";
