@@ -1,3 +1,5 @@
+import "./overlay/overStra.js";
+
 // strategy
 fetch("../javascripts/list/upload_list").then(function (res) {
   res.text().then(function (text) {
@@ -21,10 +23,7 @@ fetch("../javascripts/list/upload_list").then(function (res) {
   }
 });
 
-const modal = document.getElementById("modalStrategy"),
-  overlay = modal.querySelector(".overlay"),
-  upload = document.getElementById("upload"),
-  uList = document.getElementById("upload_list");
+const uList = document.getElementById("upload_list");
 let uChild = uList.children;
 
 function uListSeclected(event) {
@@ -36,12 +35,8 @@ function uListSeclected(event) {
   let selecIndex = Array.prototype.indexOf.call(p.children, event.target);
   uChild[selecIndex].classList.add("selected");
 }
-function sOut() {
-  location.href = "/";
-}
 
 function init() {
-  overlay.addEventListener("click", sOut);
   uList.addEventListener("click", uListSeclected);
 }
 

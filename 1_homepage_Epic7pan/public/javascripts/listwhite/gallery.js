@@ -1,3 +1,5 @@
+import "./overlay/overGall.js";
+
 //gallery
 fetch("../../javascripts/list/slide").then(function (res) {
   res.text().then(function (text) {
@@ -16,10 +18,7 @@ fetch("../../javascripts/list/slide").then(function (res) {
   }
 });
 
-const modal = document.getElementById("modalGallery"),
-  btn = modal.querySelector("button"),
-  overlay = modal.querySelector(".overlay"),
-  slide = document.getElementById("slide"),
+const slide = document.getElementById("slide"),
   bullets = document.getElementById("bullets"),
   buLi = bullets.querySelectorAll("li"),
   slideToggle = document.getElementById("slideToggle");
@@ -38,14 +37,8 @@ function slideHandler() {
   slide.removeAttribute("style");
   slide.appendChild(slide.firstElementChild);
 }
-function gOut() {
-  location.href = "/";
-}
 
 function init() {
-  btn.addEventListener("click", gOut);
-  overlay.addEventListener("click", gOut);
-
   // slide
   let timer = setInterval(slideHandler, 2000);
   slideToggle.addEventListener("click", function (event) {

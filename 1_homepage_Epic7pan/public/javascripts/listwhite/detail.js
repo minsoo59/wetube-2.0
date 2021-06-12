@@ -1,3 +1,5 @@
+import "./overlay/overDeta.js";
+
 //detail
 fetch("../../javascripts/list/videos").then(function (res) {
   res.text().then(function (text) {
@@ -21,10 +23,7 @@ fetch("../../javascripts/list/videos").then(function (res) {
   }
 });
 
-const modal = document.getElementById("modalDetail"),
-  btn = modal.querySelector("button"),
-  overlay = modal.querySelector(".overlay"),
-  prev = document.getElementById("prev"),
+const prev = document.getElementById("prev"),
   next = document.getElementById("next"),
   videoList = document.getElementById("videoList"),
   ul = videoList.querySelector("ul");
@@ -35,13 +34,8 @@ function nextHandler() {
 function prevHandler() {
   ul.prepend(ul.lastElementChild);
 }
-function dout() {
-  location.href = "/";
-}
 
 function init() {
-  btn.addEventListener("click", dout);
-  overlay.addEventListener("click", dout);
   // slide button
   prev.addEventListener("click", prevHandler);
   next.addEventListener("click", nextHandler);
