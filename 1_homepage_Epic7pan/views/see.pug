@@ -7,3 +7,5 @@ block uploadList
         li #{writing.views} #{writing.views === 1 ? "view" : "views"} 
         li #{writing.createdAt}
         a(href=`/strategy/${writing.id}/edit`) Edit writing &rarr; 
+        br
+        a(href=`/strategy/${writing.id}/delete`) Delete writing &rarr; 

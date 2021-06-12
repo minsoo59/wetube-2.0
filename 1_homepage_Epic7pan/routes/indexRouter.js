@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { index, detail, gallery } from "../controllers/indexController";
-var indexRouter = Router();
+const indexRouter = Router();
 
 /* GET home page. */
 indexRouter.route("/").get(index);

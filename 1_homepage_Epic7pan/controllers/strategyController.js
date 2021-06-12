@@ -2,7 +2,8 @@ import Write from "../models/Write";
 
 // Write.find({}, (error, writingList) => {});
 
-const strategy = async (req, res) => {
+// Read
+export const strategy = async (req, res) => {
   try {
     const writingList = await Write.find({});
     return res.render("strategy", { pageTitle: "Strategy", writingList });
@@ -10,34 +11,58 @@ const strategy = async (req, res) => {
     return res.render("server-error", { err });
   }
 };
-const see = (req, res) => {
+
+// Read_fileDetail
+export const see = async (req, res) => {
   const { id } = req.params;
+  const writing = await Write.findById(id);
+  if (!writing) {
+    return res.render("404", { pageTitle: "Writing not found" });
+  }
   return res.render("see", {
     pageTitle: `Seeing`,
+    writing,
   });
 };
-const getEdit = (req, res) => {
+
+// Upload
+export const getEdit = async (req, res) => {
   const { id } = req.params;
+  const writing = await Write.findById(id);
+  if (!writing) {
+    return res.render("404", { pageTitle: "Writing not found" });
+  }
   return res.render("edit", {
     pageTitle: `Editing`,
+    writing,
   });
 };
-const postEdit = (req, res) => {
+export const postEdit = async (req, res) => {
   const { id } = req.params;
-  const { title } = req.body;
+  const { title, description, hashtags } = req.body;
+  const writing = await Write.exists({ _id: id });
+  if (!writing) {
+    return res.render("404", { pageTitle: "Writing not found" });
+  }
+  await Write.findByIdAndUpdate(id, {
+    title,
+    description,
+    hashtags: Write.handleHashtags(hashtags),
+  });
   return res.redirect(`/strategy/${id}`);
 };
 
-const getUpload = (req, res) => {
+// Create
+export const getUpload = (req, res) => {
   return res.render("upload");
 };
-const postUpload = async (req, res) => {
+export const postUpload = async (req, res) => {
   try {
     const { title, description, hashtags } = req.body;
     await Write.create({
       title,
       description,
-      hashtags: hashtags.split(",").map((word) => `#${word}`),
+      hashtags: Write.handleHashtags(hashtags),
     });
     return res.redirect("/strategy");
   } catch (err) {
@@ -47,16 +72,11 @@ const postUpload = async (req, res) => {
     });
   }
 };
-const deleteWriting = (req, res) => {
-  res.send("Delete Writing");
-};
 
-module.exports = {
-  see,
-  getEdit,
-  postEdit,
-  getUpload,
-  postUpload,
-  deleteWriting,
-  strategy,
+// Delete
+export const deleteWriting = async (req, res) => {
+  const { id } = req.params;
+  await Write.findByIdAndDelete(id);
+  // delete Writing
+  return res.redirect("/strategy");
 };
