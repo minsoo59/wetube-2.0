@@ -12,14 +12,12 @@ const strategy = async (req, res) => {
 };
 const see = (req, res) => {
   const { id } = req.params;
-  const writing = writingList[id - 1];
   return res.render("see", {
     pageTitle: `Seeing`,
   });
 };
 const getEdit = (req, res) => {
   const { id } = req.params;
-  const writing = writingList[id - 1];
   return res.render("edit", {
     pageTitle: `Editing`,
   });
@@ -33,9 +31,21 @@ const postEdit = (req, res) => {
 const getUpload = (req, res) => {
   return res.render("upload");
 };
-const postUpload = (req, res) => {
-  const { title } = req.body;
-  return res.redirect("/strategy");
+const postUpload = async (req, res) => {
+  try {
+    const { title, description, hashtags } = req.body;
+    await Write.create({
+      title,
+      description,
+      hashtags: hashtags.split(",").map((word) => `#${word}`),
+    });
+    return res.redirect("/strategy");
+  } catch (err) {
+    return res.render("upload", {
+      pageTitle: "Upload",
+      errorMessage: err._message,
+    });
+  }
 };
 const deleteWriting = (req, res) => {
   res.send("Delete Writing");

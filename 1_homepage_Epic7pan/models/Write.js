@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
 const writeSchma = new mongoose.Schema({
-  title: String, // it's same code-> {type: String}
-  description: String,
-  createdAt: Date,
+  title: { type: String, requied: true }, // it's same code-> {type: String}
+  description: { type: String, requied: true },
+  createdAt: { type: Date, required: true, default: Date.now },
   hashtags: [{ type: String }],
   meta: {
-    views: Number,
-    rating: Number,
+    views: { type: Number, default: 0, required: true },
+    rating: { type: Number, default: 0, required: true },
   },
 });
 
