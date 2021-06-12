@@ -1,4 +1,4 @@
-const express = require("express");
+import express from "express";
 import {
   see,
   getEdit,
@@ -8,14 +8,12 @@ import {
   postUpload,
   deleteWriting,
 } from "../controllers/strategyController";
-const router = express.Router();
+const strategyRouter = express.Router();
 
-/* GET home page. */
-router.route("/").get(strategy);
-router.route("/:id([0-9a-f]{24})").get(see);
-router.route("/:id([0-9a-f]{24})/edit").get(getEdit).post(postEdit);
-router.route("/:id([0-9a-f]{24})/delete").get(deleteWriting);
-router.route("/upload").get(getUpload).post(postUpload);
-// router.route("/upload").get(edit);
+strategyRouter.route("/").get(strategy);
+strategyRouter.route("/:id([0-9a-f]{24})").get(see);
+strategyRouter.route("/:id([0-9a-f]{24})/edit").get(getEdit).post(postEdit);
+strategyRouter.route("/:id([0-9a-f]{24})/delete").get(deleteWriting);
+strategyRouter.route("/upload").get(getUpload).post(postUpload);
 
-export default router;
+export default strategyRouter;
