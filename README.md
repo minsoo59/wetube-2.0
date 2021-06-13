@@ -32,6 +32,7 @@
   - [x] modal
   - [x] slide
   - [x] auto slide
+  - [x] CRUD
 
 - 첫화면 and 메뉴
   ![1](https://user-images.githubusercontent.com/73215507/119752061-43393200-bed7-11eb-86b3-3e127a18f07c.jpg)
