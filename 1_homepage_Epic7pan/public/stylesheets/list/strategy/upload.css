@@ -1,0 +1,35 @@
+#createH1 {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+}
+
+#create > input:not(:nth-child(4)) {
+  width: 100%;
+  display: block;
+  text-align: left;
+  padding: 10px;
+  margin: 10px 0;
+  color: black;
+  height: 100%;
+  border: 1.5px solid #8888;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#create input:nth-child(2) {
+  line-height: 1.5rem;
+  height: 200px;
+}
+
+#create input:nth-child(4) {
+  border: none;
+  border-radius: 5px;
+  background-color: #ff5000;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 15px;
+  cursor: pointer;
+}

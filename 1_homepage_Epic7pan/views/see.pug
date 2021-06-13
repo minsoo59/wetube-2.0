@@ -3,9 +3,11 @@ extends strategyBase
 block uploadList
     ul#edit
         li=writing.title
-        li=writing.user 
-        li #{writing.views} #{writing.views === 1 ? "view" : "views"} 
         li #{writing.createdAt}
-        a(href=`/strategy/${writing.id}/edit`) Edit writing &rarr; 
-        br
-        a(href=`/strategy/${writing.id}/delete`) Delete writing &rarr; 
+        li=writing.description
+        li=writing.hashtags
+        a(href=`/strategy/${writing.id}/edit`) Edit
+        a(href=`/strategy/${writing.id}/delete`) Delete 
+
+block script
+    script(type="module" src="/javascripts/listwhite/overlay/overStra.js") 

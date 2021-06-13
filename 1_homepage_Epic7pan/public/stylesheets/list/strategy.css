@@ -1,6 +1,9 @@
+@import "./strategy/edit.css";
+@import "./strategy/see.css";
+@import "./strategy/upload.css";
+
 .strategy {
   width: 50%;
-  height: 50%;
   background-color: white;
   padding: 50px;
   text-align: center;

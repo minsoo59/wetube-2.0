@@ -1,6 +1,6 @@
-@import "../stylesheets/detail.css";
-@import "../stylesheets/gallery.css";
-@import "../stylesheets/strategy.css";
+@import "../stylesheets/list/detail.css";
+@import "../stylesheets/list/gallery.css";
+@import "../stylesheets/list/strategy.css";
 
 .overlay {
   position: fixed;

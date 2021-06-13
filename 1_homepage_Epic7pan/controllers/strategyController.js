@@ -54,7 +54,7 @@ export const postEdit = async (req, res) => {
 
 // Create
 export const getUpload = (req, res) => {
-  return res.render("upload");
+  return res.render("upload", { pageTitle: "글쓰기" });
 };
 export const postUpload = async (req, res) => {
   try {
