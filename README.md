@@ -42,13 +42,13 @@
     - 슬라이더 기능
       ![Screenshot 2021-05-30 at 12 58 26](https://user-images.githubusercontent.com/73215507/120091517-c4e2c700-c146-11eb-9d2a-fb3084fc57bc.jpg)
 
-  - 상단 메뉴(Gallery)) 클릭시 모달창 나오는 화면(gallery)
+  - 상단 메뉴(Gallery) 클릭시 모달창 나오는 화면(gallery)
 
     - setinterval 효과를 줘서 슬라이드 기능 자동화
     - 슬라이드 기능 재생/일시정지 버튼
       ![4](https://user-images.githubusercontent.com/73215507/119752068-4502f580-bed7-11eb-851f-50fc804aa7ee.jpg)
 
-  - 상단 메뉴(Strategy)) 클릭시 모달창 나오는 화면(strategy)
+  - 상단 메뉴(Strategy) 클릭시 모달창 나오는 화면(strategy)
 
     - CRUD
       ![Screenshot 2021-06-13 at 09 18 37](https://user-images.githubusercontent.com/73215507/121791997-caeaa480-cc2a-11eb-903b-3075a62b3472.jpg)
