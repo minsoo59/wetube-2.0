@@ -51,16 +51,20 @@
   - 상단 메뉴(Strategy) 클릭시 모달창 나오는 화면(strategy)
 
     - CRUD
-      ![Screenshot 2021-06-13 at 09 18 37](https://user-images.githubusercontent.com/73215507/121791997-caeaa480-cc2a-11eb-903b-3075a62b3472.jpg)
-      ![Screenshot 2021-06-13 at 09 28 36](https://user-images.githubusercontent.com/73215507/121791999-cc1bd180-cc2a-11eb-80fa-f6218a81e3b0.jpg)
-      ![Screenshot 2021-06-13 at 09 29 15](https://user-images.githubusercontent.com/73215507/121792000-ccb46800-cc2a-11eb-8d4b-13a738839f00.jpg)
-      ![Screenshot 2021-06-13 at 09 29 31](https://user-images.githubusercontent.com/73215507/121792001-cde59500-cc2a-11eb-9ea5-ef565b50d85d.jpg)
-      ![Screenshot 2021-06-13 at 09 29 46](https://user-images.githubusercontent.com/73215507/121792002-ce7e2b80-cc2a-11eb-935f-c724af9a7f2f.jpg)
-      ![Screenshot 2021-06-13 at 09 30 19](https://user-images.githubusercontent.com/73215507/121792003-cf16c200-cc2a-11eb-9b1f-e17be47cd09e.jpg)
-      ![Screenshot 2021-06-13 at 09 30 31](https://user-images.githubusercontent.com/73215507/121792004-cfaf5880-cc2a-11eb-8d47-3781f0b83a21.jpg)
-      ![Screenshot 2021-06-13 at 09 30 45](https://user-images.githubusercontent.com/73215507/121792005-d047ef00-cc2a-11eb-9ba5-d992b03431bb.jpg)
-      ![Screenshot 2021-06-13 at 09 31 03](https://user-images.githubusercontent.com/73215507/121792006-d0e08580-cc2a-11eb-909a-32ed305f4d3e.jpg)
-      ![Screenshot 2021-06-13 at 09 31 15](https://user-images.githubusercontent.com/73215507/121792007-d1791c00-cc2a-11eb-9439-c2e27fc79c30.jpg)
+      - Read
+        ![Screenshot 2021-06-13 at 09 18 37](https://user-images.githubusercontent.com/73215507/121791997-caeaa480-cc2a-11eb-903b-3075a62b3472.jpg)
+      - Create
+        ![Screenshot 2021-06-13 at 09 28 36](https://user-images.githubusercontent.com/73215507/121791999-cc1bd180-cc2a-11eb-80fa-f6218a81e3b0.jpg)
+        ![Screenshot 2021-06-13 at 09 29 15](https://user-images.githubusercontent.com/73215507/121792000-ccb46800-cc2a-11eb-8d4b-13a738839f00.jpg)
+      - Upload
+        ![Screenshot 2021-06-13 at 09 29 31](https://user-images.githubusercontent.com/73215507/121792001-cde59500-cc2a-11eb-9ea5-ef565b50d85d.jpg)
+        ![Screenshot 2021-06-13 at 09 29 46](https://user-images.githubusercontent.com/73215507/121792002-ce7e2b80-cc2a-11eb-935f-c724af9a7f2f.jpg)
+        ![Screenshot 2021-06-13 at 09 30 19](https://user-images.githubusercontent.com/73215507/121792003-cf16c200-cc2a-11eb-9b1f-e17be47cd09e.jpg)
+        ![Screenshot 2021-06-13 at 09 30 31](https://user-images.githubusercontent.com/73215507/121792004-cfaf5880-cc2a-11eb-8d47-3781f0b83a21.jpg)
+        ![Screenshot 2021-06-13 at 09 30 45](https://user-images.githubusercontent.com/73215507/121792005-d047ef00-cc2a-11eb-9ba5-d992b03431bb.jpg)
+      - Delete
+        ![Screenshot 2021-06-13 at 09 31 03](https://user-images.githubusercontent.com/73215507/121792006-d0e08580-cc2a-11eb-909a-32ed305f4d3e.jpg)
+        ![Screenshot 2021-06-13 at 09 31 15](https://user-images.githubusercontent.com/73215507/121792007-d1791c00-cc2a-11eb-9439-c2e27fc79c30.jpg)
 
 # 2. clonecoding
 
