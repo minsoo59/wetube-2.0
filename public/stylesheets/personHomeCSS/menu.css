@@ -1,6 +1,6 @@
-@import "../css/reset.css";
-@import "../css/partial/memu_downdrop.css";
-@import "../css/partial/subIcon.css";
+@import "../personHomeCSS/reset.css";
+@import "../personHomeCSS/partial/memu_downdrop.css";
+@import "../personHomeCSS//partial/subIcon.css";
 
 #middleObj {
   display: flex;
