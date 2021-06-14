@@ -1,0 +1,13 @@
+extends strategyBase
+
+block uploadList
+    ul#edit
+        li=writing.title
+        li #{writing.createdAt}
+        li=writing.description
+        li=writing.hashtags
+        a(href=`/epic7pan/strategy/${writing.id}/edit`) Edit
+        a(href=`/epic7pan/strategy/${writing.id}/delete`) Delete 
+
+block script
+    script(type="module" src="/javascripts/listwhite/overlay/overStra.js") 

@@ -1,0 +1,16 @@
+extends layout 
+
+block content
+    #listWhite 
+        ul 
+            li 
+                a(href="/epic7pan/detail") Detail 
+            li 
+                a(href="/epic7pan/gallery") Gallery 
+            li 
+                a(href="/epic7pan/strategy") Strategy 
+    .modal#modalStrategy
+        .overlay
+        .contents.strategy
+            #upload
+                block uploadList
