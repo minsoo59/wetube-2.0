@@ -1,14 +1,30 @@
 import Write from "../models/Write";
 
+// Search
+export const search = async (req, res) => {
+  // console.log("should search for ", keyword);
+};
+
 // Write.find({}, (error, writingList) => {});
 
 // Read
 export const strategy = async (req, res) => {
-  try {
-    const writingList = await Write.find({});
+  const { keyword } = req.query;
+  let writingList = [];
+  if (keyword) {
+    writingList = await Write.find({
+      title: {
+        $regex: new RegExp(keyword, "i"),
+      },
+    }).sort({ createdAt: "desc" });
     return res.render("strategy", { pageTitle: "Strategy", writingList });
-  } catch (err) {
-    return res.render("server-error", { err });
+  } else {
+    try {
+      writingList = await Write.find({}).sort({ createdAt: "desc" });
+      return res.render("strategy", { pageTitle: "Strategy", writingList });
+    } catch (err) {
+      return res.render("server-error", { err });
+    }
   }
 };
 

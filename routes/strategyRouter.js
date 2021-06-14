@@ -7,6 +7,7 @@ import {
   getUpload,
   postUpload,
   deleteWriting,
+  search,
 } from "../controllers/strategyController";
 const strategyRouter = express.Router();
 

@@ -27,8 +27,8 @@ block uploadList
         ul 
             li ▶
             li ⏩
-    //- form#search(action="", method="get") 
-    //-     input(type="search")
-    //-     input(type="submit", value="검색")
+    form#search(method="GET") 
+        input(type="text", placeholder="Search by title", name="keyword")
+        input(type="submit", value="검색")
 block script
     script(type="module" src="/javascripts/listwhite/strategy.js") 
