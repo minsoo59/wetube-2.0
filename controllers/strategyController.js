@@ -41,7 +41,7 @@ export const see = async (req, res) => {
   });
 };
 
-// Upload
+// Update
 export const getEdit = async (req, res) => {
   const { id } = req.params;
   const writing = await Write.findById(id);
@@ -69,10 +69,10 @@ export const postEdit = async (req, res) => {
 };
 
 // Create
-export const getUpload = (req, res) => {
-  return res.render("upload", { pageTitle: "글쓰기" });
+export const getUpdate = (req, res) => {
+  return res.render("update", { pageTitle: "글쓰기" });
 };
-export const postUpload = async (req, res) => {
+export const postUpdate = async (req, res) => {
   try {
     const { title, description, hashtags } = req.body;
     await Write.create({
@@ -82,7 +82,7 @@ export const postUpload = async (req, res) => {
     });
     return res.redirect("/epic7pan/strategy");
   } catch (err) {
-    return res.render("upload", {
+    return res.render("update", {
       pageTitle: "Upload",
       errorMessage: err._message,
     });
