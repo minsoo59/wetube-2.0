@@ -1,0 +1,9 @@
+extends wetubebase
+include mixins/video
+
+
+block content 
+    each videoList in videos
+        +videoList(videoList)
+    else 
+        li Sorry nothing found.

@@ -1,9 +1,9 @@
 {
-  "name": "web portfolio",
+  "name": "web_portfolio",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon --legacy-watch --exec babel-node ./init.js"
+    "dev": "nodemon --legacy-watch --exec babel-node src/init.js"
   },
   "author": "Minsu",
   "dependencies": {

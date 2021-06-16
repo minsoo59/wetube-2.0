@@ -1,0 +1,17 @@
+extends wetubebase
+
+block content
+    if errorMessage
+        span=errorMessage
+    form(method="POST")
+        input(placeholder="name",name="name",type="text", requried)
+        input(placeholder="email",name="email",type="email", requried)
+        input(placeholder="username",name="username",type="text", requried)
+        input(placeholder="password",name="password",type="password", requried)
+        input(placeholder="Confirm password",name="password2",type="password", requried)
+        input(placeholder="location",name="location",type="text", requried)
+        input(type="submit", value="Join")
+    hr
+    div 
+        span Already have an account??  
+        a(href="/login") Log in now &rarr;

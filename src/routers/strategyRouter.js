@@ -15,6 +15,6 @@ strategyRouter.route("/").get(strategy);
 strategyRouter.route("/:id([0-9a-f]{24})").get(see);
 strategyRouter.route("/:id([0-9a-f]{24})/edit").get(getEdit).post(postEdit);
 strategyRouter.route("/:id([0-9a-f]{24})/delete").get(deleteWriting);
-strategyRouter.route("/upload").get(getUpdate).post(postUpdate);
+strategyRouter.route("/update").get(getUpdate).post(postUpdate);
 
 export default strategyRouter;
