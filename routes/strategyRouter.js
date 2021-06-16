@@ -4,10 +4,10 @@ import {
   getEdit,
   postEdit,
   strategy,
-  getUpload,
-  postUpload,
   deleteWriting,
   search,
+  getUpdate,
+  postUpdate,
 } from "../controllers/strategyController";
 const strategyRouter = express.Router();
 
@@ -15,6 +15,6 @@ strategyRouter.route("/").get(strategy);
 strategyRouter.route("/:id([0-9a-f]{24})").get(see);
 strategyRouter.route("/:id([0-9a-f]{24})/edit").get(getEdit).post(postEdit);
 strategyRouter.route("/:id([0-9a-f]{24})/delete").get(deleteWriting);
-strategyRouter.route("/upload").get(getUpload).post(postUpload);
+strategyRouter.route("/upload").get(getUpdate).post(postUpdate);
 
 export default strategyRouter;
