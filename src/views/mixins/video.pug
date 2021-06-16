@@ -1,7 +1,7 @@
 mixin videoList(video)
     div
         h4
-            a(href=`/videos/${video.id}`)=video.title
+            a(href=`/wetube/videos/${video.id}`)=video.title
         p=video.description
         ul 
             each hashtag in video.hashtags
