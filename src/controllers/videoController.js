@@ -39,7 +39,7 @@ export const getEdit = async (req, res) => {
       .status(404)
       .render("wetube404", { pageTitle: "Video not found." });
   }
-  return res.render("wetubeedit", { pageTitle: `Edit:${video.title}`, video });
+  return res.render("wetubeEdit", { pageTitle: `Edit:${video.title}`, video });
 };
 
 export const postEdit = async (req, res) => {

@@ -2,19 +2,21 @@ import User from "../models/User";
 import bcrypt from "bcrypt";
 
 export const getJoin = (req, res) =>
-  res.render("wetubejoin", { pageTitle: "Join" });
+  res.render("wetubeJoin", { pageTitle: "Join" });
 export const postJoin = async (req, res) => {
   const { name, username, email, password, password2, location } = req.body;
+  // 패스워드 확인
   const pageTitle = "Join";
   if (password !== password2) {
-    return res.status(400).render("wetubejoin", {
+    return res.status(400).render("wetubeJoin", {
       pageTitle,
       errorMessage: "Password confirmation does not match.",
     });
   }
+  // 유저, 이메일 중복 여부 확인
   const exists = await User.exists({ $or: [{ username }, { email }] });
   if (exists) {
-    return res.status(400).render("wetubejoin", {
+    return res.status(400).render("wetubeJoin", {
       pageTitle,
       errorMessage: "This username/email is already taken.",
     });
@@ -29,7 +31,7 @@ export const postJoin = async (req, res) => {
     });
     return res.redirect("/wetube/wetubeLogin");
   } catch (error) {
-    return res.status(400).render("wetubejoin", {
+    return res.status(400).render("wetubeJoin", {
       pageTitle: "Upload Video",
       errorMessage: error._message,
     });
