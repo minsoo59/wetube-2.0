@@ -1,9 +1,7 @@
 @import "../personHomeCSS/reset.css";
 
-#middleObj {
-  margin: 7%;
-}
-
 a > #picture {
   cursor: pointer;
+  padding: 40px 100%;
+  background-color: white;
 }

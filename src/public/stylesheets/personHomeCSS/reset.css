@@ -138,9 +138,6 @@ body {
 
 #background {
   background-color: white;
-  display: grid;
-  justify-content: center;
-  align-items: center;
   margin: 7% 0;
-  padding: 30px;
+  height: fit-content;
 }
