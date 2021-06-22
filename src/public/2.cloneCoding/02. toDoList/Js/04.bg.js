@@ -5,7 +5,7 @@ const IMG_NUMBER = 3;
 function paintImage(imgNumber) {
   const image = new Image();
   //   image.src = `../../backgroundPicture/${imgNumber + 1}.jpg`;
-  image.src = `../../backgroundPicture/${3}.jpg`;
+  image.src = `./backgroundPicture/${3}.jpg`;
   image.classList.add("bgImage");
   // body.appendChild(image);
   // 조사요망 appendChild랑 비슷한 효과인듯?
