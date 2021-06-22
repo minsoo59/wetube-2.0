@@ -8,6 +8,7 @@
 
 ## - 1. persenal
 
+- 현재까지 만들었던 것들을 소개하기 위한 사이트
 - use : html/css, vanillaJS
 - 구현기능 :
 
@@ -26,6 +27,7 @@
 
 ## - 2. Epic7pan page
 
+- 모바일게임 에픽세븐에 대한 팬의 마음으로 만든 팬사이트
 - use :
 
   - Front-end : html/css, ES6, pug
@@ -71,6 +73,8 @@
         ![Screenshot 2021-06-13 at 09 31 15](https://user-images.githubusercontent.com/73215507/121792007-d1791c00-cc2a-11eb-9439-c2e27fc79c30.jpg)
 
 # 2. clonecoding
+
+- 현재까지 해본 클론코딩 리스트 정리
 
 ## - 1. <a href="https://nomadcoders.co/javascript-for-beginners-2" target="_blank">그림판</a>
 
