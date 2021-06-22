@@ -29,7 +29,7 @@ export const postJoin = async (req, res) => {
       password,
       location,
     });
-    return res.redirect("/wetube/wetubeLogin");
+    return res.redirect("/wetube/login");
   } catch (error) {
     return res.status(400).render("wetubeJoin", {
       pageTitle: "Upload Video",
