@@ -2,7 +2,7 @@
 
 # 파일 구조
 
-[파일 구조](https://user-images.githubusercontent.com/73215507/122879642-18c28380-d374-11eb-9255-2e450b06dad5.jpg)
+![파일 구조](https://user-images.githubusercontent.com/73215507/122879642-18c28380-d374-11eb-9255-2e450b06dad5.jpg)
 
 # 1. Homepage
 
