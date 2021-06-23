@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import session from "express-session";
+import MongoStore from "connect-mongo";
 import wetubeRouter from "./routers/wetubeRouter";
 import indexRouter from "./routers/indexRouter";
 import path from "path";
@@ -17,9 +18,12 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(
   session({
-    secret: "Hello!",
-    resave: true,
-    saveUninitialized: true,
+    secret: process.env.COOKIE_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: process.env.DB_URL,
+    }),
   })
 );
 

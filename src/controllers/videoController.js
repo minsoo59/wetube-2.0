@@ -13,7 +13,7 @@ export const wetube = async (req, res) => {
   //asynchronous 동시에 존재[발생]하지 않는
   // asc(ascend)-> 올라가다 desc(descend)-> 내려가다
   const videos = await Video.find({}).sort({ createdAt: "desc" });
-  return res.render("wetube", { pageTitle: "Wetube", videos });
+  return res.render("wetube", { pageTitle: "Home", videos });
 }; //방법2. promise -> callback의 최신버전이라 보면 됨.
 export const watch = async (req, res) => {
   const {
