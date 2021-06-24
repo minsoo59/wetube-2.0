@@ -107,18 +107,18 @@
   - 백엔드 : nodeJS Express, mongoDB
 - 구현기능
   - 1. Users :
-    - [] User Authentication
+    - [x] User Authentication
     - [] Facebook Login
-    - [] Github Login
+    - [x] Github Login
     - [] User Profile
-    - [] Log in
-    - [] Log Out
+    - [x] Log in
+    - [x] Log Out
   - 2. Videos :
     - [x] Video Upload
     - [] Video Recording
-    - [] Search Video
+    - [x] Search Video
     - [] AJAX Comments
-    - [] View Count
+    - [x] View Count
   - 3. Deployment
     - [] Heroku
     - [] S3 Upload
