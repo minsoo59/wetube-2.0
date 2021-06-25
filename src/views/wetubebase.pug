@@ -12,9 +12,9 @@ html(lang="ko")
                         a(href="/wetube") Home
                     if loggedIn 
                         li 
-                            a(href="/wetube/users/logout") Log Out
+                            a(href="/wetube/edit") Edit Profile
                         li 
-                            a(href="/wetube/my-profile") #{loggedInUser.name}의 profile
+                            a(href="/wetube/users/logout") Log Out
                     else 
                         li 
                             a(href="/wetube/join") Join
