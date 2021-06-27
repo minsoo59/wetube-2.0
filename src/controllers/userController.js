@@ -153,7 +153,39 @@ export const logout = (req, res) => {
 export const getEdit = (req, res) => {
   return res.render("wetubeEdit-profile", { pageTitle: "Edit Profile" });
 };
-export const postEdit = (req, res) => {
-  return res.render("wetubeEdit-profile");
+export const postEdit = async (req, res) => {
+  // const id = req.session.user.id
+  // const { name, email, username, location } = req.body;
+  const {
+    session: {
+      user: { _id, email: sessionEmail, username: sessionUsername },
+    },
+    body: { name, email, username, location },
+  } = req;
+  let sessionParam = [];
+  if (sessionEmail !== email) sessionParam.push({ email });
+  if (sessionUsername !== username) sessionParam.push({ username });
+
+  if (sessionParam.length > 0) {
+    const foundUser = await User.findOne({ $or: sessionParam });
+    if (foundUser && foundUser._id.toStraing() !== _id) {
+      return res.status(400).render("wetubeEdit-profile", {
+        pageTitle: "Edit Profile",
+        errorMessage: "This email/username is already taken.",
+      });
+    }
+  }
+  const updatedUser = await User.findByIdAndUpdate(
+    _id,
+    {
+      name,
+      email,
+      username,
+      location,
+    },
+    { new: true }
+  );
+  req.session.user = updatedUser;
+  return res.redirect("/wetube/users/edit");
 };
 export const see = (req, res) => res.send("see User!");

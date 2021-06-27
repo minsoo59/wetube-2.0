@@ -12,6 +12,8 @@ html(lang="ko")
                         a(href="/wetube") Home
                     if loggedIn 
                         li 
+                            a(href="/wetube/videos/upload") Upload Video
+                        li 
                             a(href="/wetube/users/edit") Edit Profile
                         li 
                             a(href="/wetube/users/logout") Log Out
@@ -22,8 +24,6 @@ html(lang="ko")
                             a(href="/wetube/login") Login
                     li 
                         a(href="/wetube/search") Search
-                    li 
-                        a(href="/wetube/videos/upload") Upload Video
                     
         main 
             block content 
