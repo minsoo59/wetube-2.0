@@ -1,4 +1,4 @@
-extends wetubeBase
+extends ../base
 
 block content 
     if errorMessage
@@ -9,3 +9,6 @@ block content
         input(placeholder="username",name="username",type="text", requried, value=loggedInUser.username)
         input(placeholder="location",name="location",type="text", requried, value=loggedInUser.location)
         input(type="submit", value="Update Profile")
+        if !loggedInUser.socialOnly
+            hr
+            a(href="change-password") Change Password &rarr;

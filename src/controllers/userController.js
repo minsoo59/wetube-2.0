@@ -3,13 +3,13 @@ import fetch from "node-fetch";
 import bcrypt from "bcrypt";
 
 export const getJoin = (req, res) =>
-  res.render("wetubeJoin", { pageTitle: "Join" });
+  res.render("wetube/users/join", { pageTitle: "Join" });
 export const postJoin = async (req, res) => {
   const { name, username, email, password, password2, location } = req.body;
   // 패스워드 확인
   const pageTitle = "Join";
   if (password !== password2) {
-    return res.status(400).render("wetubeJoin", {
+    return res.status(400).render("wetube/users/join", {
       pageTitle,
       errorMessage: "Password confirmation does not match.",
     });
@@ -17,7 +17,7 @@ export const postJoin = async (req, res) => {
   // 유저, 이메일 중복 여부 확인
   const exists = await User.exists({ $or: [{ username }, { email }] });
   if (exists) {
-    return res.status(400).render("wetubeJoin", {
+    return res.status(400).render("wetube/users/join", {
       pageTitle,
       errorMessage: "This username/email is already taken.",
     });
@@ -32,21 +32,21 @@ export const postJoin = async (req, res) => {
     });
     return res.redirect("/wetube/login");
   } catch (error) {
-    return res.status(400).render("wetubeJoin", {
+    return res.status(400).render("wetube/users/join", {
       pageTitle: "Upload Video",
       errorMessage: error._message,
     });
   }
 };
 export const getLogin = (req, res) =>
-  res.render("wetubeLogin", { pageTitle: "Login" });
+  res.render("wetube/users/login", { pageTitle: "Login" });
 export const postLogin = async (req, res) => {
   const { username, password } = req.body;
   const pageTitle = "Login";
   const user = await User.findOne({ username, socialOnly: false });
   // check if account exists
   if (!user) {
-    return res.status(400).render("wetubeLogin", {
+    return res.status(400).render("wetube/users/login", {
       pageTitle,
       errorMessage: "An account with this username does not exists.",
     });
@@ -54,7 +54,7 @@ export const postLogin = async (req, res) => {
   const ok = await bcrypt.compare(password, user.password);
   // check if password correct
   if (!ok) {
-    return res.status(400).render("wetubeLogin", {
+    return res.status(400).render("wetube/users/login", {
       pageTitle,
       errorMessage: "Wrong password",
     });
@@ -151,7 +151,9 @@ export const logout = (req, res) => {
   return res.redirect("/wetube");
 };
 export const getEdit = (req, res) => {
-  return res.render("wetubeEdit-profile", { pageTitle: "Edit Profile" });
+  return res.render("wetube/users/edit-profile", {
+    pageTitle: "Edit Profile",
+  });
 };
 export const postEdit = async (req, res) => {
   // const id = req.session.user.id
@@ -169,7 +171,7 @@ export const postEdit = async (req, res) => {
   if (sessionParam.length > 0) {
     const foundUser = await User.findOne({ $or: sessionParam });
     if (foundUser && foundUser._id.toStraing() !== _id) {
-      return res.status(400).render("wetubeEdit-profile", {
+      return res.status(400).render("wetube/users/edit-profile", {
         pageTitle: "Edit Profile",
         errorMessage: "This email/username is already taken.",
       });
@@ -188,4 +190,18 @@ export const postEdit = async (req, res) => {
   req.session.user = updatedUser;
   return res.redirect("/wetube/users/edit");
 };
+
+export const getChangePassword = (req, res) => {
+  if (req.session.user.socialOnly == true) {
+    return res.redirect("/wetube");
+  }
+  return res.render("wetube/users/change-password", {
+    pageTitle: "Change Password",
+  });
+};
+export const postChangePassword = (req, res) => {
+  // send notification
+  return res.redirect("/wetube");
+};
+
 export const see = (req, res) => res.send("see User!");

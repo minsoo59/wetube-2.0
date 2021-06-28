@@ -13,7 +13,7 @@ export const wetube = async (req, res) => {
   //asynchronous 동시에 존재[발생]하지 않는
   // asc(ascend)-> 올라가다 desc(descend)-> 내려가다
   const videos = await Video.find({}).sort({ createdAt: "desc" });
-  return res.render("wetube", { pageTitle: "Home", videos });
+  return res.render("wetube/video/index", { pageTitle: "Home", videos });
 }; //방법2. promise -> callback의 최신버전이라 보면 됨.
 export const watch = async (req, res) => {
   const {
@@ -24,9 +24,9 @@ export const watch = async (req, res) => {
   if (!video) {
     return res
       .status(404)
-      .render("wetube404", { pageTitle: "Video not found." });
+      .render("wetube/video/404", { pageTitle: "Video not found." });
   }
-  return res.render("wetubeWatch", { pageTitle: video.title, video });
+  return res.render("wetube/video/watch", { pageTitle: video.title, video });
 };
 
 export const getEdit = async (req, res) => {
@@ -37,9 +37,12 @@ export const getEdit = async (req, res) => {
   if (!video) {
     return res
       .status(404)
-      .render("wetube404", { pageTitle: "Video not found." });
+      .render("wetube/video/404", { pageTitle: "Video not found." });
   }
-  return res.render("wetubeEdit", { pageTitle: `Edit:${video.title}`, video });
+  return res.render("wetube/video/edit", {
+    pageTitle: `Edit:${video.title}`,
+    video,
+  });
 };
 
 export const postEdit = async (req, res) => {
@@ -49,7 +52,7 @@ export const postEdit = async (req, res) => {
   if (!video) {
     return res
       .status(404)
-      .render("wetube404", { pageTitle: "Video not found." });
+      .render("wetube/video/404", { pageTitle: "Video not found." });
   }
   await Video.findByIdAndUpdate(id, {
     title,
@@ -61,7 +64,7 @@ export const postEdit = async (req, res) => {
 };
 
 export const getUpload = (req, res) => {
-  return res.render("wetubeUpload", { pageTitle: "Upload Video" });
+  return res.render("wetube/video/upload", { pageTitle: "Upload Video" });
 };
 
 //. 데이터 만드는 방법2 -> if you have video model, just create
@@ -76,7 +79,7 @@ export const postUpload = async (req, res) => {
     // await video.save();
     return res.redirect("/wetube");
   } catch (error) {
-    return res.status(400).render("wetubeUpload", {
+    return res.status(400).render("wetube/video/upload", {
       pageTitle: "Upload Video",
       errorMessage: error._message,
     });
@@ -104,5 +107,5 @@ export const search = async (req, res) => {
       },
     });
   }
-  return res.render("wetubeSearch", { pageTitle: "Search", videos });
+  return res.render("wetube/video/search", { pageTitle: "Search", videos });
 };
