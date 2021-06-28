@@ -31,7 +31,7 @@
 - use :
 
   - Front-end : html/css, ES6, pug
-  - Back-end : nodeJS Express
+  - Back-end : nodeJS Express, mongoDB
 
 - 구현기능 :
 
