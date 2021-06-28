@@ -199,9 +199,32 @@ export const getChangePassword = (req, res) => {
     pageTitle: "Change Password",
   });
 };
-export const postChangePassword = (req, res) => {
+export const postChangePassword = async (req, res) => {
+  const {
+    session: {
+      user: { _id, password },
+    },
+    body: { oldPassword, newPassword, newPasswordConfirmation },
+  } = req;
+  const ok = await bcrypt.compare(oldPassword, password);
+  if (!ok) {
+    return res.status(400).render("wetube/users/change-password", {
+      pageTitle: "Change Password",
+      errorMessage: "The current password is incorrect",
+    });
+  }
+  if (newPassword !== newPasswordConfirmation) {
+    return res.status(400).render("wetube/users/change-password", {
+      pageTitle: "Change Password",
+      errorMessage: "The password does not match the confirmation",
+    });
+  }
+  const user = await User.findById(_id);
+  user.password = newPassword;
+  await user.save();
+  req.session.user.password = user.password;
   // send notification
-  return res.redirect("/wetube");
+  return res.redirect("/wetube/users/logout");
 };
 
 export const see = (req, res) => res.send("see User!");
