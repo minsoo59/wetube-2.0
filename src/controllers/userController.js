@@ -160,9 +160,10 @@ export const postEdit = async (req, res) => {
   // const { name, email, username, location } = req.body;
   const {
     session: {
-      user: { _id, email: sessionEmail, username: sessionUsername },
+      user: { _id, email: sessionEmail, username: sessionUsername, avatarUrl },
     },
     body: { name, email, username, location },
+    file,
   } = req;
   let sessionParam = [];
   if (sessionEmail !== email) sessionParam.push({ email });
@@ -180,6 +181,7 @@ export const postEdit = async (req, res) => {
   const updatedUser = await User.findByIdAndUpdate(
     _id,
     {
+      avatarUrl: file ? file.path : avatarUrl,
       name,
       email,
       username,

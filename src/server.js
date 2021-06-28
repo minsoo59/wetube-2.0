@@ -15,7 +15,6 @@ app.set("views", process.cwd() + "/src/views");
 app.use(logger);
 app.use(express.urlencoded({ extended: true })); // form의 value들을 이해할 수 있음.
 app.use(express.static(path.join(__dirname, "public")));
-
 app.use(
   session({
     secret: process.env.COOKIE_SECRET,
@@ -29,6 +28,7 @@ app.use(
 
 app.use(localsMiddleware);
 app.use("/epic7pan", indexRouter);
+app.use("/uploads", express.static("uploads"));
 app.use("/wetube", wetubeRouter);
 
 export default app;
