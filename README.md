@@ -110,7 +110,7 @@
     - [x] User Authentication
     - [] Facebook Login
     - [x] Github Login
-    - [] User Profile
+    - [x] User Profile
     - [x] Log in
     - [x] Log Out
   - 2. Videos :

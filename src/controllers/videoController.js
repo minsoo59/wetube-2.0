@@ -36,12 +36,19 @@ export const watch = async (req, res) => {
 export const getEdit = async (req, res) => {
   const {
     params: { id },
+    session: {
+      user: { _id },
+    },
   } = req;
+
   const video = await Video.findById(id);
   if (!video) {
     return res
       .status(404)
       .render("wetube/404", { pageTitle: "Video not found." });
+  }
+  if (String(video.owner) !== String(_id)) {
+    return res.status(403).redirect("/wetube");
   }
   return res.render("wetube/video/edit", {
     pageTitle: `Edit:${video.title}`,
@@ -50,19 +57,28 @@ export const getEdit = async (req, res) => {
 };
 
 export const postEdit = async (req, res) => {
-  const { id } = req.params;
-  const { title, description, hashtags } = req.body;
+  const {
+    params: { id },
+    body: { title, description, hashtags },
+    session: {
+      user: { _id },
+    },
+  } = req;
+
   const video = await Video.exists({ _id: id });
   if (!video) {
     return res
       .status(404)
       .render("wetube/404", { pageTitle: "Video not found." });
   }
-  await Video.findByIdAndUpdate(id, {
+  const videoModified = await Video.findByIdAndUpdate(id, {
     title,
     description,
     hashtags: Video.formatHashtags(hashtags),
   });
+  if (String(videoModified.owner) !== String(_id)) {
+    return res.status(403).redirect("/wetube");
+  }
   //redirect-> 브라우저가 자동으로 이동하도록 하는 것.
   return res.redirect(`/wetube/videos/${id}`);
 };
@@ -102,7 +118,21 @@ export const postUpload = async (req, res) => {
 };
 
 export const deleteVideo = async (req, res) => {
-  const { id } = req.params;
+  const {
+    params: { id },
+    session: {
+      user: { _id },
+    },
+  } = req;
+  const video = await Video.findById(id);
+  if (!video) {
+    return res
+      .status(404)
+      .render("wetube/404", { pageTitle: "Video not found." });
+  }
+  if (String(video.owner) !== String(_id)) {
+    return res.status(403).redirect("/wetube");
+  }
   await Video.findByIdAndDelete(id);
   // delete video
   return res.redirect("/wetube");
