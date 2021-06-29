@@ -1,4 +1,5 @@
 import Video from "../models/Video";
+import User from "../models/User";
 
 // CRUD operations
 // Video.find({}, (error, videos) => {
@@ -20,13 +21,16 @@ export const watch = async (req, res) => {
     params: { id },
   } = req;
   // edit 기능을 위한
-  const video = await Video.findById(id);
+  const video = await Video.findById(id).populate("owner");
   if (!video) {
     return res
       .status(404)
-      .render("wetube/video/404", { pageTitle: "Video not found." });
+      .render("wetube/404", { pageTitle: "Video not found." });
   }
-  return res.render("wetube/video/watch", { pageTitle: video.title, video });
+  return res.render("wetube/video/watch", {
+    pageTitle: video.title,
+    video,
+  });
 };
 
 export const getEdit = async (req, res) => {
@@ -37,7 +41,7 @@ export const getEdit = async (req, res) => {
   if (!video) {
     return res
       .status(404)
-      .render("wetube/video/404", { pageTitle: "Video not found." });
+      .render("wetube/404", { pageTitle: "Video not found." });
   }
   return res.render("wetube/video/edit", {
     pageTitle: `Edit:${video.title}`,
@@ -52,7 +56,7 @@ export const postEdit = async (req, res) => {
   if (!video) {
     return res
       .status(404)
-      .render("wetube/video/404", { pageTitle: "Video not found." });
+      .render("wetube/404", { pageTitle: "Video not found." });
   }
   await Video.findByIdAndUpdate(id, {
     title,
@@ -69,15 +73,24 @@ export const getUpload = (req, res) => {
 
 //. 데이터 만드는 방법2 -> if you have video model, just create
 export const postUpload = async (req, res) => {
-  const { path: fileUrl } = req.file; //es6
-  const { title, description, hashtags } = req.body;
+  const {
+    session: {
+      user: { _id },
+    },
+    file: { path: fileUrl }, //es6
+    body: { title, description, hashtags },
+  } = req;
   try {
-    await Video.create({
+    const newVideo = await Video.create({
       title,
       description,
       fileUrl,
+      owner: _id,
       hashtags: Video.formatHashtags(hashtags),
     });
+    const user = await User.findById(_id);
+    user.videos.push(newVideo._id);
+    user.save();
     // await video.save();
     return res.redirect("/wetube");
   } catch (error) {

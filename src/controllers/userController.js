@@ -1,4 +1,5 @@
 import User from "../models/User";
+import Video from "../models/Video";
 import fetch from "node-fetch";
 import bcrypt from "bcrypt";
 
@@ -234,4 +235,16 @@ export const postChangePassword = async (req, res) => {
   return res.redirect("/wetube/users/logout");
 };
 
-export const see = (req, res) => res.send("see User!");
+export const see = async (req, res) => {
+  const { id } = req.params;
+  const user = await User.findById(id).populate("videos");
+  if (!user) {
+    return res
+      .status(404)
+      .render("wetube/404", { pageTitle: "User not found." });
+  }
+  return res.render("wetube/users/profile", {
+    pageTitle: user.name,
+    user,
+  });
+};
