@@ -69,11 +69,13 @@ export const getUpload = (req, res) => {
 
 //. 데이터 만드는 방법2 -> if you have video model, just create
 export const postUpload = async (req, res) => {
+  const { path: fileUrl } = req.file; //es6
   const { title, description, hashtags } = req.body;
   try {
     await Video.create({
       title,
       description,
+      fileUrl,
       hashtags: Video.formatHashtags(hashtags),
     });
     // await video.save();
