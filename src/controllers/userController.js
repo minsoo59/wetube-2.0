@@ -194,6 +194,7 @@ export const postEdit = async (req, res) => {
 };
 
 export const getChangePassword = (req, res) => {
+  // 쇼셜 로그인 경우
   if (req.session.user.socialOnly == true) {
     return res.redirect("/wetube");
   }
@@ -208,6 +209,7 @@ export const postChangePassword = async (req, res) => {
     },
     body: { oldPassword, newPassword, newPasswordConfirmation },
   } = req;
+  // 현pw 일치여부 체크
   const ok = await bcrypt.compare(oldPassword, password);
   if (!ok) {
     return res.status(400).render("wetube/users/change-password", {
@@ -215,15 +217,18 @@ export const postChangePassword = async (req, res) => {
       errorMessage: "The current password is incorrect",
     });
   }
+  // 바꿀려는 pw 체크
   if (newPassword !== newPasswordConfirmation) {
     return res.status(400).render("wetube/users/change-password", {
       pageTitle: "Change Password",
       errorMessage: "The password does not match the confirmation",
     });
   }
+  // db에 저장
   const user = await User.findById(_id);
   user.password = newPassword;
   await user.save();
+  // session 저장
   req.session.user.password = user.password;
   // send notification
   return res.redirect("/wetube/users/logout");
