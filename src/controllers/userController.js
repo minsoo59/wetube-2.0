@@ -238,6 +238,7 @@ export const see = async (req, res) => {
   const { id } = req.params;
   const user = await User.findById(id).populate({
     path: "videos",
+    // double populate
     populate: {
       path: "owner",
       model: "User",

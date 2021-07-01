@@ -10,11 +10,15 @@ header
                 li 
                     a(href="/wetube/videos/upload") Upload Video
                 li 
-                    a(href=`/wetube/users/${loggedInUser._id}`) My Profile
-                li 
                     a(href="/wetube/users/edit") Edit Profile
                 li 
                     a(href="/wetube/users/logout") Log Out
+                li 
+                    a(href=`/wetube/users/${loggedInUser._id}`) 
+                        if loggedInUser.avatarUrl === ""
+                            span 😊
+                        else 
+                            img.header__avatar(src="/wetube"+loggedInUser.avatarUrl)
             else 
                 li
                     a(href="/wetube/login") Login
