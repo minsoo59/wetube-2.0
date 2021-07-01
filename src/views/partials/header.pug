@@ -1,9 +1,11 @@
 header
-    a(href="/wetube")
+    a(href="/wetube").header__logo
         i.fab.fa-youtube
     nav 
         ul 
             li 
+                a(href="/wetube/search")
+                    i.fas.fa-search 
             if loggedIn 
                 li 
                     a(href="/wetube/videos/upload") Upload Video
@@ -14,10 +16,9 @@ header
                 li 
                     a(href="/wetube/users/logout") Log Out
             else 
-                li 
-                    a(href="/wetube/join") Join
                 li
                     a(href="/wetube/login") Login
-            li 
-                a(href="/wetube/search") Search
+                li 
+                    a(href="/wetube/join").header__btn Join
+
     

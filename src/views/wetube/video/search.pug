@@ -2,10 +2,12 @@ extends ../base
 include ../../mixins/video
 
 block content 
-    form(method="GET")
+    form(method="GET").search__form
         input(placeholder="Search by title", name="keyword", type="text")
-        input(type="submit", value="Search now")
-
-    div
+        button 
+            i.fas.fa-search
+    .video-grid
         each videoList in videos
             +videoList(videoList)
+        else 
+            span.empty__message No videos found 

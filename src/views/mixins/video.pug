@@ -1,10 +1,8 @@
 mixin videoList(video)
-    div
-        h4
-            a(href=`/wetube/videos/${video.id}`)=video.title
-        p=video.description
-        ul 
-            each hashtag in video.hashtags
-                li=hashtag
-        small=video.createdAt
-        hr
+    a(href=`/wetube/videos/${video.id}`).video-mixin
+        .video-mixin__thumb
+        .video-mixin_data 
+            span.video-mixin__title=video.title
+            .video-mixin__meta
+                span #{video.owner.name} • 
+                span #{video.meta.views} 회 
