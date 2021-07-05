@@ -8,8 +8,7 @@ form {
     border: 1px solid rgba($color: #fff, $alpha: 0.1);
   }
 }
-
-input:not(input[type="range"]) {
+input {
   all: unset;
   padding: 15px 20px;
   border-radius: 5px;
@@ -23,7 +22,11 @@ input:not(input[type="range"]) {
     color: rgba(255, 255, 255, 0.7);
   }
 }
-
+input[type="range"] {
+  all: unset;
+  border-radius: 10px;
+  background-color: #fff;
+}
 input[type="submit"],
 .social__btn {
   border-radius: 5px;
