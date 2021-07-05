@@ -8,6 +8,7 @@ import {
 import { wetube, search } from "../controllers/videoController";
 import videoRouter from "./videoRouter";
 import userRouter from "./userRouter";
+import apiRouter from "./apiRouter";
 import { publicOnlyMiddleware } from "../middlewares";
 
 const wetubeRouter = express.Router();
@@ -27,5 +28,6 @@ wetubeRouter
 wetubeRouter.get("/search", search);
 wetubeRouter.use("/videos", videoRouter);
 wetubeRouter.use("/users", userRouter);
+wetubeRouter.use("/api", apiRouter);
 
 export default wetubeRouter;

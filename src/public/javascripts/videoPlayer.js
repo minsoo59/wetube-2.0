@@ -98,13 +98,19 @@ const handleMouseMove = () => {
 const handleMouseLeave = () => {
   controlsTimeout = setTimeout(hideControls, 3000);
 };
+
+const handleEnded = () => {
+  const { videoid: id } = videoContainer.dataset;
+  fetch(`/wetube/api/videos/${id}/view`, { method: "POST" });
+};
 playBtn.addEventListener("click", handlePlayClick);
 video.addEventListener("click", handlePlayClick);
 // video.addEventListener("keydown", handlePlayKeypress);
 muteBtn.addEventListener("click", handleMute);
 volumeRange.addEventListener("input", handleVolumeChange);
-video.addEventListener("loadeddata", handleLoadedMetadata);
+video.addEventListener("loadedmetadata", handleLoadedMetadata);
 video.addEventListener("timeupdate", handleTimeUpdate);
+video.addEventListener("ended", handleEnded);
 timeline.addEventListener("input", handleTimelineChange);
 fullScreenBtn.addEventListener("click", handleFullscreen);
 videoContainer.addEventListener("mousemove", handleMouseMove);
