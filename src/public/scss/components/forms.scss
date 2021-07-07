@@ -8,7 +8,9 @@ form {
     border: 1px solid rgba($color: #fff, $alpha: 0.1);
   }
 }
-input {
+
+input,
+input[type="submit"] {
   all: unset;
   padding: 15px 20px;
   border-radius: 5px;
@@ -26,14 +28,24 @@ input[type="range"] {
   all: unset;
   border-radius: 10px;
   background-color: #fff;
+  height: 5px;
 }
+
 input[type="submit"],
 .social__btn {
   border-radius: 5px;
-  padding: 12px, 20px;
-  background-color: white;
-  color: rgba($color: $red, $alpha: 1);
-  text-align: center;
+  padding: 12px 20px;
+  background-color: white !important;
+  color: rgba($color: $red, $alpha: 1) !important;
+  text-align: center !important;
   cursor: pointer;
   display: block;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }

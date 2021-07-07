@@ -27,6 +27,7 @@ app.use(
 );
 
 app.use(localsMiddleware);
+app.use("/convert", express.static("node_modules/@ffmpeg/core/dist"));
 app.use("/epic7pan", indexRouter);
 app.use("/static", express.static("assets")); //사용자에게 보여질 화면
 app.use("/uploads", express.static("uploads"));
