@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String },
   name: { type: String, required: true },
   location: String,
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
   videos: [{ type: mongoose.Schema.Types.ObjectId, ref: "Video" }],
 });
 // 저장하기 전에 pre미들웨어로 비밀번호를 bcypt의 해쉬함수를 써서 암호화되고 and 5번의 salt한 후의 data로 저장됨.

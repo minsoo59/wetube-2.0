@@ -15,6 +15,9 @@ const videoSchema = new mongoose.Schema({
     //자동으로 유효성검사를 통해 몽구스가 그 데이터의 전송을 막아줌.
     // 그러니 mongoose에게 데이터 타입을 "구체적으로" 작성할수록 더 편해짐.
   },
+  comment: [
+    { type: mongoose.Schema.Types.ObjectId, required: true, ref: "Comment" },
+  ],
   owner: { type: mongoose.Schema.Types.ObjectId, required: true, ref: "User" },
 });
 

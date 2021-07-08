@@ -4,9 +4,10 @@ import "./db";
 import "./models/Write";
 import "./models/Video";
 import "./models/User";
+import "./models/Comment";
 import app from "./server";
 
-const port = 3000;
+const port = 7700;
 
 const handleListening = () =>
   console.log(`✅ Sever Listening on port http://localhost:${port} 🐱‍🏍`);
