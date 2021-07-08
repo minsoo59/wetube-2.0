@@ -30,6 +30,7 @@ export const postJoin = async (req, res) => {
       password,
       location,
     });
+
     return res.redirect("/wetube/login");
   } catch (error) {
     return res.status(400).render("wetube/users/join", {
@@ -59,6 +60,7 @@ export const postLogin = async (req, res) => {
       errorMessage: "Wrong password",
     });
   }
+  req.flash("info", "Log in success!");
   req.session.loggedIn = true;
   req.session.user = user;
   return res.redirect("/wetube");
@@ -104,7 +106,6 @@ export const finishGithubLogin = async (req, res) => {
         },
       })
     ).json();
-    console.log(userData);
     const userName = await (
       await fetch(`${apiUrl}/user/name`, {
         headers: {
@@ -112,7 +113,6 @@ export const finishGithubLogin = async (req, res) => {
         },
       })
     ).json();
-    console.log("userName", userName);
     const emailData = await (
       await fetch(`${apiUrl}/user/emails`, {
         headers: {
@@ -138,6 +138,7 @@ export const finishGithubLogin = async (req, res) => {
         location: userData.location,
       });
     }
+    req.flash("info", "Log in success!");
     req.session.loggedIn = true;
     req.session.user = user;
     return res.redirect("/wetube");
@@ -147,7 +148,10 @@ export const finishGithubLogin = async (req, res) => {
 };
 
 export const logout = (req, res) => {
-  req.session.destroy();
+  // req.session.destroy();
+  req.session.loggedIn = null;
+  req.session.user = null;
+  req.flash("info", "Bye Bye");
   return res.redirect("/wetube");
 };
 export const getEdit = (req, res) => {
@@ -196,6 +200,7 @@ export const postEdit = async (req, res) => {
 export const getChangePassword = (req, res) => {
   // 쇼셜 로그인 경우
   if (req.session.user.socialOnly == true) {
+    req.flash("error", "Can't change password.");
     return res.redirect("/wetube");
   }
   return res.render("wetube/users/change-password", {
@@ -228,6 +233,7 @@ export const postChangePassword = async (req, res) => {
   const user = await User.findById(_id);
   user.password = newPassword;
   await user.save();
+  req.flash("info", "Password updated");
   // session 저장
   req.session.user.password = user.password;
   // send notification

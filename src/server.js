@@ -1,6 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import session from "express-session";
+import flash from "express-flash";
 import MongoStore from "connect-mongo";
 import wetubeRouter from "./routers/wetubeRouter";
 import indexRouter from "./routers/indexRouter";
@@ -26,6 +27,7 @@ app.use(
   })
 );
 
+app.use(flash());
 app.use(localsMiddleware);
 app.use("/convert", express.static("node_modules/@ffmpeg/core/dist"));
 app.use("/epic7pan", indexRouter);
