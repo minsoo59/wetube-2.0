@@ -189,21 +189,21 @@ export const createComment = async (req, res) => {
   });
   video.comments.push(comment._id);
   video.save();
-  return res.status(201).json({ newCommentId: comment._id, comment }); // 201 is created
+  return res.status(201).json({ newCommentId: comment._id }); // 201 is created
 };
 export const deleteComment = async (req, res) => {
   const {
-    params: { id },
+    params: { id: commentId }, //
     session: {
       user: { _id },
     },
   } = req;
 
-  const comment = await Comment.findById(id).populate("owner");
-
+  const comment = await Comment.findById(commentId).populate("owner");
   if (String(comment.owner._id) !== _id) return res.sendStatus(404);
+
   await Comment.findByIdAndDelete(comment.owner._id);
-  await Comment.findByIdAndDelete(id);
+  await Comment.findByIdAndDelete(commentId);
 
   return res.sendStatus(200);
 };

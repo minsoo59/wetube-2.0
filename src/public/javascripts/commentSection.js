@@ -1,15 +1,13 @@
 const videoContainer = document.getElementById("videoContainer");
 const form = document.getElementById("commentForm");
 const videoComments = document.querySelector(".video__comments ul");
-const newComment = document.createElement("li");
-const icon = document.createElement("i");
-const span = document.createElement("span");
-const span2 = document.createElement("span");
+const delBtn = document.querySelectorAll(".deleteBtn");
 
 const deleteComment = async (event) => {
   let btn = event.target;
   let deleteForm = btn.parentNode;
-  const id = deleteForm.dataset.id;
+  const id = deleteForm.dataset.id; //commentId
+
   const response = await fetch(`/wetube/api/comment/${id}`, {
     method: "DELETE",
   });
@@ -19,23 +17,32 @@ const deleteComment = async (event) => {
 };
 
 const addComment = (text, id) => {
+  const icon = document.createElement("i");
   icon.className = "fas fa-comment";
-  newComment.className = "video__comment";
+
+  const span = document.createElement("span");
+  span.innerText = ` ${text}`;
+
+  const span2 = document.createElement("span");
   span2.innerText = "❌";
   span2.style.cursor = "pointer";
+  span2.className = "deleteBtn";
+
+  const newComment = document.createElement("li");
+  newComment.className = "video__comment";
   newComment.dataset.id = id;
-  span.innerText = ` ${text}`;
   newComment.appendChild(icon);
   newComment.appendChild(span);
   newComment.appendChild(span2);
+
   videoComments.prepend(newComment);
 };
 
 const handleSubmit = async (event) => {
   event.preventDefault();
+  const videoId = videoContainer.dataset.videoid;
   const textarea = form.querySelector("textarea");
   const text = textarea.value;
-  const videoId = videoContainer.dataset.videoid;
   if (text === "") {
     return;
   }
@@ -56,6 +63,8 @@ const handleSubmit = async (event) => {
 if (form) {
   form.addEventListener("submit", handleSubmit);
 }
-if (span2) {
-  span2.addEventListener("click", deleteComment);
+if (delBtn) {
+  delBtn.forEach((btn) => {
+    btn.addEventListener("click", deleteComment);
+  });
 }
