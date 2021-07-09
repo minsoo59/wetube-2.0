@@ -198,22 +198,12 @@ export const deleteComment = async (req, res) => {
       user: { _id },
     },
   } = req;
+
   const comment = await Comment.findById(id).populate("owner");
-  const user = await User.findById(_id).populate({
-    path: "comments",
-    populate: {
-      path: "owner",
-      model: "User",
-    },
-  });
-  console.log("comments" + comment);
-  console.log("users" + user);
 
   if (String(comment.owner._id) !== _id) return res.sendStatus(404);
   await Comment.findByIdAndDelete(comment.owner._id);
   await Comment.findByIdAndDelete(id);
-  console.log("comments delete 후 " + comment);
-  console.log("users delete 후 " + user);
 
   return res.sendStatus(200);
 };
