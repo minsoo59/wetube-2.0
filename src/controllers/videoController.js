@@ -1,5 +1,6 @@
 import Video from "../models/Video";
 import User from "../models/User";
+import Comment from "../models/Comment";
 
 // CRUD operations
 // Video.find({}, (error, videos) => {
@@ -23,7 +24,7 @@ export const watch = async (req, res) => {
     params: { id },
   } = req;
   // edit 기능을 위한
-  const video = await Video.findById(id).populate("owner");
+  const video = await Video.findById(id).populate("owner").populate("comments");
   if (!video) {
     return res
       .status(404)
@@ -171,8 +172,48 @@ export const registerView = async (req, res) => {
   return res.sendStatus(200);
 };
 
-export const createComment = (req, res) => {
-  console.log(req.body);
-  console.log(req.params);
-  return res.end();
+export const createComment = async (req, res) => {
+  const {
+    params: { id },
+    body: { text },
+    session: { user },
+  } = req;
+
+  const video = await Video.findById(id);
+  if (!video) return res.sendStatus(404);
+
+  const comment = await Comment.create({
+    text,
+    owner: user._id,
+    video: id,
+  });
+  video.comments.push(comment._id);
+  video.save();
+  return res.status(201).json({ newCommentId: comment._id, comment }); // 201 is created
+};
+export const deleteComment = async (req, res) => {
+  const {
+    params: { id },
+    session: {
+      user: { _id },
+    },
+  } = req;
+  const comment = await Comment.findById(id).populate("owner");
+  const user = await User.findById(_id).populate({
+    path: "comments",
+    populate: {
+      path: "owner",
+      model: "User",
+    },
+  });
+  console.log("comments" + comment);
+  console.log("users" + user);
+
+  if (String(comment.owner._id) !== _id) return res.sendStatus(404);
+  await Comment.findByIdAndDelete(comment.owner._id);
+  await Comment.findByIdAndDelete(id);
+  console.log("comments delete 후 " + comment);
+  console.log("users delete 후 " + user);
+
+  return res.sendStatus(200);
 };
