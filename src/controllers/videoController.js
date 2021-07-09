@@ -204,6 +204,5 @@ export const deleteComment = async (req, res) => {
 
   await Comment.findByIdAndDelete(comment.owner._id);
   await Comment.findByIdAndDelete(commentId);
-
   return res.sendStatus(200);
 };

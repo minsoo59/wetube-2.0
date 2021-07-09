@@ -27,6 +27,7 @@ const addComment = (text, id) => {
   span2.innerText = "❌";
   span2.style.cursor = "pointer";
   span2.className = "deleteBtn";
+  span2.addEventListener("click", deleteComment);
 
   const newComment = document.createElement("li");
   newComment.className = "video__comment";
@@ -60,11 +61,6 @@ const handleSubmit = async (event) => {
   }
 };
 
-if (form) {
-  form.addEventListener("submit", handleSubmit);
-}
-if (delBtn) {
-  delBtn.forEach((btn) => {
-    btn.addEventListener("click", deleteComment);
-  });
-}
+if (form) form.addEventListener("submit", handleSubmit);
+
+delBtn.forEach((btn) => btn.addEventListener("click", deleteComment));
