@@ -9,29 +9,29 @@ import {
   postEdit,
   getChangePassword,
   postChangePassword,
-} from "../controllers/userController";
+} from "../controllers/userC";
 import {
   avatarUpload,
   protectorMiddleware,
   publicOnlyMiddleware,
 } from "../middlewares";
 
-const userRouter = express.Router();
+const userR = express.Router();
 
-userRouter.get("/logout", protectorMiddleware, logout);
-userRouter
+userR.get("/logout", protectorMiddleware, logout);
+userR
   .route("/edit")
   .all(protectorMiddleware)
   .get(getEdit)
   .post(avatarUpload.single("avatar"), postEdit);
-userRouter
+userR
   .route("/change-password")
   .all(protectorMiddleware)
   .get(getChangePassword)
   .post(postChangePassword);
-userRouter.get("/github/start", publicOnlyMiddleware, startGithubLogin);
-userRouter.get("/github/finish", publicOnlyMiddleware, finishGithubLogin);
+userR.get("/github/start", publicOnlyMiddleware, startGithubLogin);
+userR.get("/github/finish", publicOnlyMiddleware, finishGithubLogin);
 
-userRouter.get("/:id", see);
+userR.get("/:id", see);
 
-export default userRouter;
+export default userR;

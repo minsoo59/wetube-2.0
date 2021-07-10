@@ -3,8 +3,9 @@ import morgan from "morgan";
 import session from "express-session";
 import flash from "express-flash";
 import MongoStore from "connect-mongo";
-import wetubeRouter from "./routers/wetubeRouter";
-import indexRouter from "./routers/indexRouter";
+import indexR from "./routers/indexR";
+import wetubeR from "./routers/wetubeR";
+import epic7panR from "./routers/epic7panR";
 import path from "path";
 import { localsMiddleware } from "./middlewares";
 
@@ -31,9 +32,10 @@ app.use(
 app.use(flash());
 app.use(localsMiddleware);
 app.use("/convert", express.static("node_modules/@ffmpeg/core/dist"));
-app.use("/epic7pan", indexRouter);
+app.use("/", indexR);
+app.use("/epic7pan", epic7panR);
 app.use("/static", express.static("assets")); //사용자에게 보여질 화면
 app.use("/uploads", express.static("uploads"));
-app.use("/wetube", wetubeRouter);
+app.use("/wetube", wetubeR);
 
 export default app;

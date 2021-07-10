@@ -11,7 +11,7 @@ if (dropdown && skillsList) {
       for (let n = 0; n < items.length; n++) {
         let item = items[n];
         item = item.trim(); // 앞뒤에 쓰잘떼기 없는 스페이스 공간 자르기 위해
-        let tag = `<li><a href=${"skills" + item + ".html"}>${item}</a></li>`;
+        let tag = `<li><a href=/${"skills" + item}>${item}</a></li>`;
         tags = tags + tag;
       }
       skillsList.innerHTML = tags;

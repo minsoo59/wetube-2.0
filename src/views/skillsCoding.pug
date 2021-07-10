@@ -1,0 +1,36 @@
+extends base
+
+block link
+    link(rel="stylesheet" href="stylesheets/personHomeCSS/menu.css")
+    link(rel="stylesheet" href="stylesheets/personHomeCSS/skillsCoding.css")
+block content 
+    include ./partials/menuList
+    #wrap 
+        aside#sidebar 
+            #skillsCoding_page SKILLS 
+            ul#skills_list 
+        #content_skills 
+            h1 Coding 
+            ul#coding_list 
+                li HTML/CSS
+                    #htmlCss 
+                        img(src="images/html.png", alt="html")
+                        img(src="images/css.png", alt="css")
+                li Javascript 
+                    img(src="images/300size/javascript.png", alt="Javascript")
+                li JQuery 
+                    img(src="images/300size/jquery.png", alt="JQuery")
+                li NodeJS 
+                    img(src="images/300size/nodeJs.png", alt="NodeJS")
+                li Pug 
+                    img(src="images/300size/pug.png", alt="Pug")
+                li MongoDB 
+                    img(src="images/300size/mongodb.png", alt="MongoDB")
+            h1 Design 
+            ul#design_list 
+                li Photoshop 
+                    img(src="images/300size/photoshop.png", alt="Photoshop")
+                li Photoshop 
+                    img(src="images/300size/Illustrator.png", alt="Illustrator")
+block script
+    script(src="javascripts/index.js")

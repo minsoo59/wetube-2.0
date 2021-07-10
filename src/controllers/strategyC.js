@@ -17,11 +17,17 @@ export const strategy = async (req, res) => {
         $regex: new RegExp(keyword, "i"),
       },
     }).sort({ createdAt: "desc" });
-    return res.render("strategy", { pageTitle: "Strategy", writingList });
+    return res.render("epic7pan/strategy", {
+      pageTitle: "Strategy",
+      writingList,
+    });
   } else {
     try {
       writingList = await Write.find({}).sort({ createdAt: "desc" });
-      return res.render("strategy", { pageTitle: "Strategy", writingList });
+      return res.render("epic7pan/strategy", {
+        pageTitle: "Strategy",
+        writingList,
+      });
     } catch (err) {
       return res.render("server-error", { err });
     }
@@ -33,9 +39,9 @@ export const see = async (req, res) => {
   const { id } = req.params;
   const writing = await Write.findById(id);
   if (!writing) {
-    return res.render("404", { pageTitle: "Writing not found" });
+    return res.render("epic7pan/404", { pageTitle: "Writing not found" });
   }
-  return res.render("see", {
+  return res.render("epic7pan/see", {
     pageTitle: `Seeing`,
     writing,
   });
@@ -46,19 +52,21 @@ export const getEdit = async (req, res) => {
   const { id } = req.params;
   const writing = await Write.findById(id);
   if (!writing) {
-    return res.render("404", { pageTitle: "Writing not found" });
+    return res.render("epic7pan/404", { pageTitle: "Writing not found" });
   }
-  return res.render("edit", {
+  return res.render("epic7pan/edit", {
     pageTitle: `Editing`,
     writing,
   });
 };
 export const postEdit = async (req, res) => {
-  const { id } = req.params;
-  const { title, description, hashtags } = req.body;
+  const {
+    params: { id },
+    body: { title, description, hashtags },
+  } = req;
   const writing = await Write.exists({ _id: id });
   if (!writing) {
-    return res.render("404", { pageTitle: "Writing not found" });
+    return res.render("epic7pan/404", { pageTitle: "Writing not found" });
   }
   await Write.findByIdAndUpdate(id, {
     title,
@@ -70,7 +78,7 @@ export const postEdit = async (req, res) => {
 
 // Create
 export const getUpdate = (req, res) => {
-  return res.render("update", { pageTitle: "글쓰기" });
+  return res.render("epic7pan/update", { pageTitle: "글쓰기" });
 };
 export const postUpdate = async (req, res) => {
   try {
@@ -82,7 +90,7 @@ export const postUpdate = async (req, res) => {
     });
     return res.redirect("/epic7pan/strategy");
   } catch (err) {
-    return res.render("update", {
+    return res.render("epic7pan/update", {
       pageTitle: "Upload",
       errorMessage: err._message,
     });
