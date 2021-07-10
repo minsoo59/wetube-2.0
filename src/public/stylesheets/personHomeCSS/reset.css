@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url(../font/font.css);
 html,
 body,
 div,
@@ -131,7 +130,6 @@ table {
 body {
   background-color: #e1dcd9;
   font-size: 12px;
-  font-family: "NanumBarunGothic", sans-serif;
   color: #444;
   letter-spacing: 0.05em;
 }
