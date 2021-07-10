@@ -1,5 +1,3 @@
-import "../stylesheets/index.css";
-
 const skills = document.getElementById("skills");
 let dropdown = document.getElementById("dropdown");
 const desiginList = document.querySelector("#design_list");
