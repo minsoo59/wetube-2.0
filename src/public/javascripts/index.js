@@ -4,7 +4,7 @@ const desiginList = document.querySelector("#design_list");
 const skillsList = document.querySelector("#skills_list");
 
 if (dropdown && skillsList) {
-  fetch("../list/skills_list").then(function (response) {
+  fetch("../list/skills_list.txt").then(function (response) {
     response.text().then(function (text) {
       let items = text.split(",");
       let tags = "";
@@ -23,7 +23,7 @@ if (dropdown && skillsList) {
   });
 }
 if (desiginList) {
-  fetch("../list/design_list").then(function (response) {
+  fetch("../list/design_list.txt").then(function (response) {
     response.text().then(function (text) {
       let items = text.split(",");
       let tags = "";
