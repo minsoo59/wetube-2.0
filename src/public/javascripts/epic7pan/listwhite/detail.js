@@ -1,6 +1,5 @@
-import "./overlay/overDeta.js";
 //detail
-fetch("../../javascripts/list/videos.txt").then(function (res) {
+fetch("../javascripts/epic7pan/list/videos.txt").then(function (res) {
   res.text().then(function (text) {
     let items = text.split(",");
     let tags = "";

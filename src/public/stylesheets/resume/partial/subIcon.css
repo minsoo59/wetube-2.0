@@ -2,11 +2,10 @@
 .menu {
   float: left;
   padding: 15px;
-  width: 120px;
+  width: 135px;
   background-color: #8f8681;
   color: white;
   border-radius: 25px;
-  text-align: center;
   line-height: 25px;
   font-size: 17px;
   font-weight: bold;
@@ -14,13 +13,12 @@
 }
 
 /* coding, projects menu icon */
-#skillsCoding_page,
-#skillsProjects_page {
+#skills_menu {
   padding: 15px;
-  width: 65px;
+  width: 90px;
   background-color: #8f8681;
   color: white;
-  border-radius: 25px;
+  border-radius: 35px;
   text-align: center;
   line-height: 25px;
   font-size: 17px;

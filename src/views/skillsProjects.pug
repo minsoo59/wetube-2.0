@@ -1,31 +1,28 @@
 extends base
 
-block link
-    link(rel="stylesheet" href="stylesheets/personHomeCSS/menu.css")
-    link(rel="stylesheet" href="stylesheets/personHomeCSS/skillsProjects.css")
 block content 
     include ./partials/menuList
     #wrap 
         aside#sidebar 
-            #skillsProjects_page SKILLS 
+            #skills_menu SKILLS 
             ul#skills_list 
         #content_skills 
             h1 Project 
             ol 
                 li Homepage 
                     a(href="http:epic7pan" target="_blank") 
-                        img(src="images/projects/1. epic.jpg", alt="epic")
+                        img.project(src="images/projects/1. epic.jpg", alt="epic")
                 li Clone coding 
                     ol 
                         li Todolist 
                             a(href="2.cloneCoding/02. toDoList/index.html" target="_blank") 
-                                img(src="images/projects/2. todolist.jpg", alt="todolist")
+                                img.project(src="images/projects/2. todolist.jpg", alt="todolist")
                         li Painting board 
                             a(href="2.cloneCoding/01. Paint_program/index.html" target="_blank") 
-                                img(src="images/projects/3. paintboard.jpg", alt="paintboard")
+                                img.project(src="images/projects/3. paintboard.jpg", alt="paintboard")
                         li Wetube
                             a(href="http:wetube" target="_blank") 
-                                img(src="images/projects/wetube.jpg", alt="wetube")
+                                img.project(src="images/projects/wetube.jpg", alt="wetube")
                     
 block script
-    script(src="javascripts/index.js")
+    script(src="/static/js/dropdown.js")

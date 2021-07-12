@@ -1,7 +1,5 @@
-import "./overlay/overStra.js";
-
 // strategy
-fetch("../javascripts/list/upload_list.txt").then(function (res) {
+fetch("../javascripts/epic7pan/list/upload_list.txt").then(function (res) {
   res.text().then(function (text) {
     let items = text.split(",");
     let tags = "";

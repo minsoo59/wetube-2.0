@@ -1,7 +1,3 @@
-@import "../personHomeCSS/reset.css";
-@import "../personHomeCSS/partial/memu_downdrop.css";
-@import "../personHomeCSS//partial/subIcon.css";
-
 #middleObj {
   display: flex;
   flex-direction: column;
@@ -14,6 +10,7 @@
   background-color: #8f8681;
   margin: 5px 0;
   position: relative;
+  z-index: 1;
 }
 
 #menuList > li > a {

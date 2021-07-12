@@ -1,10 +1,9 @@
 const skills = document.getElementById("skills");
 let dropdown = document.getElementById("dropdown");
-const desiginList = document.querySelector("#design_list");
 const skillsList = document.querySelector("#skills_list");
 
-if (dropdown && skillsList) {
-  fetch("../list/skills_list.txt").then(function (response) {
+if (dropdown || skillsList) {
+  fetch("./javascripts/resume/list/skills_list.txt").then(function (response) {
     response.text().then(function (text) {
       let items = text.split(",");
       let tags = "";
@@ -14,26 +13,10 @@ if (dropdown && skillsList) {
         let tag = `<li><a href=/${"skills" + item}>${item}</a></li>`;
         tags = tags + tag;
       }
-      skillsList.innerHTML = tags;
-      dropdown.innerHTML = tags;
-    });
-    if (response.status == "404") {
-      alert("fetch Not Read");
-    }
-  });
-}
-if (desiginList) {
-  fetch("../list/design_list.txt").then(function (response) {
-    response.text().then(function (text) {
-      let items = text.split(",");
-      let tags = "";
-      for (let n = 0; n < items.length; n++) {
-        let item = items[n];
-        item = item.trim();
-        let tag = `<li>${item}<img src="images/300size/${item}.png" alt="${item}"/></li>`;
-        tags = tags + tag;
+      if (skillsList) {
+        skillsList.innerHTML = tags;
       }
-      desiginList.innerHTML = tags;
+      dropdown.innerHTML = tags;
     });
     if (response.status == "404") {
       alert("fetch Not Read");

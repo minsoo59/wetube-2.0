@@ -1,0 +1,10 @@
+body {
+  position: relative;
+
+  background: url(../../images/bg.jpg) no-repeat;
+  background-size: 100%;
+  top: 0;
+  left: 0;
+  max-width: 1920px;
+  height: 1080px;
+}

@@ -1,14 +1,7 @@
 extends base
 
-block link
-    link(rel="stylesheet" href="stylesheets/personHomeCSS/menu.css")
-    link(rel="stylesheet" href="stylesheets/personHomeCSS/introduce.css")
 block content 
     include ./partials/menuList
-        li 
-            a(href="/skillsCoding") Coding 
-        li 
-            a(href="/skillsProjects") Projects 
     #area_intro 
         .menu INTRODUCE 
         #content-intro 
@@ -17,7 +10,7 @@ block content
                 li 김 민 수
                 li 연락처
                 li 010.3766.8306
-        img(src="/images/face.jpg", alt="photo")
+        img.face(src="/images/face.jpg", alt="photo")
     #area_certi 
         .menu CERTIFICATE
         #content-certi
@@ -26,4 +19,4 @@ block content
                 li 기계가공조립기능사 / 컴퓨터응용가공선반기능사 / 컴퓨터응용가공밀링기능사
                 li 新 JLPT N1 / 정보처리기사 / ICDL Start / 1종보통면허
 block script
-    script(src="javascripts/index.js")
+    script(src="/static/js/dropdown.js")
