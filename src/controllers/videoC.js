@@ -52,7 +52,7 @@ export const getEdit = async (req, res) => {
   }
   if (String(video.owner) !== String(_id)) {
     req.flash("error", "You are not the owner of the video.");
-    return res.status(403).redirect("/wetube");
+    return res.status(403).redirect("/");
   }
   return res.render("wetube/video/edit", {
     pageTitle: `Edit:${video.title}`,
@@ -81,10 +81,10 @@ export const postEdit = async (req, res) => {
     hashtags: Video.formatHashtags(hashtags),
   });
   if (String(videoModified.owner) !== String(_id)) {
-    return res.status(403).redirect("/wetube");
+    return res.status(403).redirect("/");
   }
   //redirect-> 브라우저가 자동으로 이동하도록 하는 것.
-  return res.redirect(`/wetube/videos/${id}`);
+  return res.redirect(`/videos/${id}`);
 };
 
 export const getUpload = (req, res) => {
@@ -115,7 +115,7 @@ export const postUpload = async (req, res) => {
     user.videos.push(newVideo._id);
     user.save();
     // await video.save();
-    return res.redirect("/wetube");
+    return res.redirect("/");
   } catch (error) {
     return res.status(400).render("wetube/video/upload", {
       pageTitle: "Upload Video",
@@ -138,11 +138,11 @@ export const deleteVideo = async (req, res) => {
       .render("wetube/404", { pageTitle: "Video not found." });
   }
   if (String(video.owner) !== String(_id)) {
-    return res.status(403).redirect("/wetube");
+    return res.status(403).redirect("/");
   }
   await Video.findByIdAndDelete(id);
   // delete video
-  return res.redirect("/wetube");
+  return res.redirect("/");
 };
 
 export const search = async (req, res) => {
