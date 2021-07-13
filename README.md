@@ -8,7 +8,7 @@
 
 - use :
   - 프론트엔드 : html/css, ES6, pug
-  - 백엔드 : nodeJS Express, mongoDB
+  - 백엔드 : nodeJS Express, mongoDB, AWS
 - 구현기능
   - 1. Users :
     - [x] User Authentication
