@@ -1,7 +1,0 @@
-mixin write(info)
-    ul.item  
-        li
-            a#itmeTitle(href=`/epic7pan/strategy/${info.id}`)=info.title   
-        li #{info.user}
-        li #{info.views} #{info.views === 1 ? "view" : "views"}
-        li #{info.createdAt}

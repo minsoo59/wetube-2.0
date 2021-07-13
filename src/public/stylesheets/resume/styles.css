@@ -4,12 +4,7 @@
 /* index */
 @import "./index.css";
 
-/* introduce */
-@import "./introduce.css";
-@import "./menu.css";
-
 /* skills */
-@import "./skillsCoding.css";
 @import "./partial/side.css";
 @import "./skillsProjects.css";
 @import "./partial/memu_downdrop.css";

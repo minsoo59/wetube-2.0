@@ -2,7 +2,6 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const BASE_JS = "./src/public/javascripts/";
-const BASE_TEXT = "list/";
 
 module.exports = [
   // css, scss config
@@ -10,16 +9,8 @@ module.exports = [
     plugins: [new MiniCssExtractPlugin({ filename: "css/[name].css" })],
     entry: {
       // resume
-      resumeMain: BASE_JS + "resume/main.js",
-      dropdown: BASE_JS + "resume/dropdown.js",
-      // epic7pan
-      epicMain: BASE_JS + "epic7pan/main.js",
-      detail: BASE_JS + "epic7pan/listwhite/detail.js",
-      overDeta: BASE_JS + "epic7pan/listwhite/overlay/overDeta.js",
-      gallery: BASE_JS + "epic7pan/listwhite/gallery.js",
-      overGall: BASE_JS + "epic7pan/listwhite/overlay/overGall.js",
-      strategy: BASE_JS + "epic7pan/listwhite/strategy.js",
-      overStra: BASE_JS + "epic7pan/listwhite/overlay/overStra.js",
+      // resumeMain: BASE_JS + "resume/main.js",
+      // dropdown: BASE_JS + "resume/dropdown.js",
       // wetube
       wetubeMain: BASE_JS + "wetube/main.js",
       commentSection: BASE_JS + "wetube/commentSection.js",
@@ -29,7 +20,7 @@ module.exports = [
     output: {
       filename: "js/[name].js",
       path: path.resolve(__dirname, "assets/"),
-      publicPath: "../../static/",
+      // publicPath: "../../static/",
     },
     module: {
       rules: [

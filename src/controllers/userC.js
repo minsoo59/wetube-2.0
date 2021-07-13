@@ -31,7 +31,7 @@ export const postJoin = async (req, res) => {
       location,
     });
 
-    return res.redirect("/wetube/login");
+    return res.redirect("/login");
   } catch (error) {
     return res.status(400).render("wetube/users/join", {
       pageTitle: "Upload Video",
@@ -63,7 +63,7 @@ export const postLogin = async (req, res) => {
   req.flash("info", "Log in success!");
   req.session.loggedIn = true;
   req.session.user = user;
-  return res.redirect("/wetube");
+  return res.redirect("/");
 };
 
 export const startGithubLogin = (req, res) => {
@@ -117,7 +117,7 @@ export const finishGithubLogin = async (req, res) => {
       (email) => email.primary === true && email.verified === true
     );
     if (!emailObj) {
-      return res.redirect("/wetube/login");
+      return res.redirect("/login");
     }
     let user = await User.findOne({ email: emailObj.email });
     if (!user) {
@@ -134,9 +134,9 @@ export const finishGithubLogin = async (req, res) => {
     req.flash("info", "Log in success!");
     req.session.loggedIn = true;
     req.session.user = user;
-    return res.redirect("/wetube");
+    return res.redirect("/");
   } else {
-    return res.redirect("/wetube/login");
+    return res.redirect("/login");
   }
 };
 
@@ -145,7 +145,7 @@ export const logout = (req, res) => {
   req.session.loggedIn = null;
   req.session.user = null;
   req.flash("info", "Bye Bye");
-  return res.redirect("/wetube");
+  return res.redirect("/");
 };
 export const getEdit = (req, res) => {
   return res.render("wetube/users/edit-profile", {
@@ -188,14 +188,14 @@ export const postEdit = async (req, res) => {
     { new: true }
   );
   req.session.user = updatedUser;
-  return res.redirect("/wetube/users/edit");
+  return res.redirect("/users/edit");
 };
 
 export const getChangePassword = (req, res) => {
   // 쇼셜 로그인 경우
   if (req.session.user.socialOnly == true) {
     req.flash("error", "Can't change password.");
-    return res.redirect("/wetube");
+    return res.redirect("/");
   }
   return res.render("wetube/users/change-password", {
     pageTitle: "Change Password",
@@ -231,7 +231,7 @@ export const postChangePassword = async (req, res) => {
   // session 저장
   req.session.user.password = user.password;
   // send notification
-  return res.redirect("/wetube/users/logout");
+  return res.redirect("/users/logout");
 };
 
 export const see = async (req, res) => {
