@@ -4,7 +4,7 @@
 
 # Clonecoding
 
-## - <a href="https://nomadcoders.co/wetube" target="_blank">wetube(유튜브)</a>
+## - <a href="https://nomadcoders.co/wetube" target="_blank"> wetube(유튜브)</a>
 
 - use :
   - 프론트엔드 : html/css, ES6, pug
@@ -12,7 +12,6 @@
 - 구현기능
   - 1. Users :
     - [x] User Authentication
-    - [x] Facebook Login
     - [x] Github Login
     - [x] User Profile
     - [x] Log in
