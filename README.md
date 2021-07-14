@@ -4,7 +4,7 @@
 
 # Clonecoding
 
-## - <a href="https://nomadcoders.co/wetube" target="_blank"> wetube(유튜브)</a>
+## - <a href="https://nomadcoders.co/wetube" target="_blank"> WETUBE(유튜브)</a>
 
 - use :
 
